@@ -1,0 +1,329 @@
+/* Input Component Specific Styles */
+
+/* Component Page Layout */
+.component-page {
+    padding: 40px 0 80px;
+}
+
+.component-header {
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.component-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--on-surface);
+}
+
+.component-intro {
+    font-size: 18px;
+    color: var(--on-surface-variant);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: var(--on-surface);
+}
+
+/* Demo Section */
+.demo-section {
+    margin-bottom: 64px;
+}
+
+.demo-container {
+    background: var(--surface-variant);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.demo-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.demo-button {
+    padding: 8px 16px;
+    border: 1px solid var(--outline-variant);
+    border-radius: 6px;
+    background: var(--surface-bright);
+    color: var(--on-surface);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.demo-button:hover {
+    border-color: var(--primary-400);
+    background: var(--primary-100);
+}
+
+.demo-button.active {
+    background: var(--primary-400);
+    color: var(--surface-bright);
+    border-color: var(--primary-400);
+}
+
+.demo-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    background: var(--surface-bright);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.input-demo-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Input Styles */
+.input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid var(--outline-variant);
+    border-radius: 8px;
+    background: var(--surface-bright);
+    transition: all 0.2s ease;
+}
+
+.input.rectangular {
+    border-radius: 4px;
+}
+
+.input.rounded {
+    border-radius: 20px;
+}
+
+.input-field {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: var(--on-surface);
+    font-size: 14px;
+    font-family: var(--font-primary);
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: var(--on-surface-dim);
+}
+
+.input-field:disabled {
+    color: var(--on-surface-dim);
+    cursor: not-allowed;
+}
+
+/* Input States */
+.input.state-default {
+    border-color: var(--outline-variant);
+    background: var(--surface-bright);
+}
+
+.input.state-focus {
+    border-color: var(--primary-400);
+    background: var(--surface-bright);
+    box-shadow: 0 0 0 3px rgba(247, 143, 37, 0.1);
+}
+
+.input.state-disabled {
+    border-color: var(--outline-variant);
+    background: var(--surface-dim);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.input.state-filled {
+    border-color: var(--outline-variant);
+    background: var(--surface-bright);
+}
+
+.input.state-error {
+    border-color: var(--error);
+    background: var(--surface-bright);
+}
+
+/* States Section */
+.states-section {
+    margin-bottom: 64px;
+}
+
+.states-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.state-example {
+    background: var(--surface-bright);
+    border: 1px solid var(--outline-variant);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.state-example:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.state-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--on-surface);
+}
+
+.state-preview {
+    background: var(--surface-variant);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.state-description {
+    color: var(--on-surface-variant);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Variants Section */
+.variants-section {
+    margin-bottom: 64px;
+}
+
+.variants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.variant-example {
+    background: var(--surface-bright);
+    border: 1px solid var(--outline-variant);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.variant-example:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.variant-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--on-surface);
+}
+
+.variant-preview {
+    background: var(--surface-variant);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.variant-description {
+    color: var(--on-surface-variant);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 12px;
+}
+
+
+/* Guidelines Section */
+.guidelines-section {
+    margin-bottom: 64px;
+}
+
+.guidelines-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.guideline {
+    background: var(--surface-bright);
+    border: 1px solid var(--outline-variant);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.guideline-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--on-surface);
+}
+
+.guideline-list {
+    list-style: none;
+    padding: 0;
+}
+
+.guideline-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--surface-variant);
+    color: var(--on-surface-variant);
+    line-height: 1.5;
+}
+
+.guideline-list li:last-child {
+    border-bottom: none;
+}
+
+.guideline-list li::before {
+    content: "•";
+    color: var(--primary-400);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .component-title {
+        font-size: 36px;
+    }
+    
+    .demo-controls {
+        justify-content: center;
+    }
+    
+    .states-grid,
+    .variants-grid,
+    .guidelines-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .demo-container {
+        padding: 20px;
+    }
+    
+    .input-demo-container {
+        max-width: 100%;
+    }
+}

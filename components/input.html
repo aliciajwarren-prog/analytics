@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Component - LibLynx Design System</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="input.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <a href="../index.html" class="logo">← LibLynx Design System</a>
+                <nav class="nav">
+                    <a href="../index.html#components" class="nav-link">Components</a>
+                    <a href="../index.html#tokens" class="nav-link">Tokens</a>
+                    <a href="../index.html#guidelines" class="nav-link">Guidelines</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Component Page -->
+        <main class="component-page">
+            <div class="container">
+                <!-- Component Header -->
+                <div class="component-header">
+                    <h1 class="component-title">Input</h1>
+                    <p class="component-intro">
+                        Input components allow users to enter and edit text. They support various states, 
+                        styles, and can include additional elements like tags or icons.
+                    </p>
+                </div>
+
+                <!-- Interactive Demo -->
+                <section class="demo-section">
+                    <h2 class="section-title">Interactive Demo</h2>
+                    <div class="demo-container">
+                        <div class="demo-controls">
+                            <button class="demo-button" data-state="default">Default</button>
+                            <button class="demo-button" data-state="focus">Focus</button>
+                            <button class="demo-button" data-state="disabled">Disabled</button>
+                            <button class="demo-button" data-state="filled">Filled</button>
+                            <button class="demo-button" data-state="error">Error</button>
+                        </div>
+                        <div class="demo-preview">
+                            <div class="input-demo-container">
+                                <div class="input" id="interactive-input">
+                                    <input type="text" placeholder="Default" class="input-field">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Input States -->
+                <section class="states-section">
+                    <h2 class="section-title">Input States</h2>
+                    <div class="states-grid">
+                        <div class="state-example">
+                            <h3 class="state-title">Default</h3>
+                            <div class="state-preview">
+                                <div class="input state-default">
+                                    <input type="text" placeholder="Default" class="input-field">
+                                </div>
+                            </div>
+                            <p class="state-description">Default state with light border and placeholder text.</p>
+                        </div>
+
+                        <div class="state-example">
+                            <h3 class="state-title">Focus</h3>
+                            <div class="state-preview">
+                                <div class="input state-focus">
+                                    <input type="text" placeholder="Focus" class="input-field">
+                                </div>
+                            </div>
+                            <p class="state-description">Focus state with blue border and focus ring.</p>
+                        </div>
+
+                        <div class="state-example">
+                            <h3 class="state-title">Disabled</h3>
+                            <div class="state-preview">
+                                <div class="input state-disabled">
+                                    <input type="text" placeholder="Disabled" class="input-field" disabled>
+                                </div>
+                            </div>
+                            <p class="state-description">Disabled state with muted colors and no interaction.</p>
+                        </div>
+
+                        <div class="state-example">
+                            <h3 class="state-title">Filled</h3>
+                            <div class="state-preview">
+                                <div class="input state-filled">
+                                    <input type="text" value="Filled" class="input-field">
+                                </div>
+                            </div>
+                            <p class="state-description">Filled state with user-entered content.</p>
+                        </div>
+
+                        <div class="state-example">
+                            <h3 class="state-title">Error</h3>
+                            <div class="state-preview">
+                                <div class="input state-error">
+                                    <input type="text" placeholder="Error" class="input-field">
+                                </div>
+                            </div>
+                            <p class="state-description">Error state with red border indicating validation error.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Input Variants -->
+                <section class="variants-section">
+                    <h2 class="section-title">Input Variants</h2>
+                    <div class="variants-grid">
+                        <div class="variant-example">
+                            <h3 class="variant-title">Rectangular Style</h3>
+                            <div class="variant-preview">
+                                <div class="input rectangular">
+                                    <input type="text" placeholder="Rectangular" class="input-field">
+                                </div>
+                            </div>
+                            <p class="variant-description">Sharp, rectangular corners for a more formal appearance.</p>
+                        </div>
+
+                        <div class="variant-example">
+                            <h3 class="variant-title">Rounded Style</h3>
+                            <div class="variant-preview">
+                                <div class="input rounded">
+                                    <input type="text" placeholder="Rounded" class="input-field">
+                                </div>
+                            </div>
+                            <p class="variant-description">Rounded corners for a softer, more modern appearance.</p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Usage Guidelines -->
+                <section class="guidelines-section">
+                    <h2 class="section-title">Usage Guidelines</h2>
+                    <div class="guidelines-content">
+                        <div class="guideline">
+                            <h3 class="guideline-title">When to Use</h3>
+                            <ul class="guideline-list">
+                                <li>When users need to enter free-form text</li>
+                                <li>For search queries, form fields, and data entry</li>
+                                <li>When the input format is flexible or unknown</li>
+                                <li>For single-line text input</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="guideline">
+                            <h3 class="guideline-title">When Not to Use</h3>
+                            <ul class="guideline-list">
+                                <li>When there are predefined options (use dropdown instead)</li>
+                                <li>For multi-line text (use textarea instead)</li>
+                                <li>When input format is highly constrained (use specialized inputs)</li>
+                                <li>For binary choices (use radio buttons or checkboxes)</li>
+                            </ul>
+                        </div>
+
+                        <div class="guideline">
+                            <h3 class="guideline-title">Accessibility</h3>
+                            <ul class="guideline-list">
+                                <li>Provide clear labels for all inputs</li>
+                                <li>Use placeholder text sparingly and as hints only</li>
+                                <li>Ensure sufficient color contrast for all states</li>
+                                <li>Provide clear error messages and validation feedback</li>
+                                <li>Support keyboard navigation and screen readers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="input.js"></script>
+</body>
+</html>

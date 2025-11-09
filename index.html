@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibLynx Design System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">LibLynx Design System</h1>
+                <nav class="nav">
+                    <a href="#components" class="nav-link">Components</a>
+                    <a href="#tokens" class="nav-link">Tokens</a>
+                    <a href="#guidelines" class="nav-link">Guidelines</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">Build beautiful, consistent interfaces</h2>
+                <p class="hero-description">
+                    A comprehensive design system with reusable components, design tokens, and guidelines 
+                    to help you create exceptional user experiences.
+                </p>
+            </div>
+        </section>
+
+        <!-- Components Section -->
+        <section id="components" class="components-section">
+            <div class="container">
+                <h2 class="section-title">Components</h2>
+                <div class="components-grid">
+                    <!-- Dropdown Component Card -->
+                    <div class="component-card">
+                        <div class="component-preview">
+                            <div class="dropdown-demo">
+                                <div class="dropdown-container">
+                                    <div class="dropdown" data-state="default">
+                                        <span class="dropdown-text">Select database</span>
+                                        <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component-info">
+                            <h3 class="component-name">Dropdown</h3>
+                            <p class="component-description">
+                                A versatile dropdown component with multiple states and configurations.
+                            </p>
+                            <div class="component-states">
+                                <span class="state-tag">Default</span>
+                                <span class="state-tag">Hover</span>
+                                <span class="state-tag">Focus</span>
+                                <span class="state-tag">Disabled</span>
+                                <span class="state-tag">Error</span>
+                            </div>
+                            <a href="components/dropdown.html" class="component-link">View Component →</a>
+                        </div>
+                    </div>
+
+                    <!-- Input Component Card -->
+                    <div class="component-card">
+                        <div class="component-preview">
+                            <div class="input-demo">
+                                <div class="input-container">
+                                    <div class="input">
+                                        <input type="text" placeholder="Enter text" class="input-field">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="component-info">
+                            <h3 class="component-name">Input</h3>
+                            <p class="component-description">
+                                Text input components with multiple states, styles, and dropdown variations.
+                            </p>
+                            <div class="component-states">
+                                <span class="state-tag">Default</span>
+                                <span class="state-tag">Focus</span>
+                                <span class="state-tag">Disabled</span>
+                                <span class="state-tag">Error</span>
+                                <span class="state-tag">Filled</span>
+                            </div>
+                            <a href="components/input.html" class="component-link">View Component →</a>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder for more components -->
+                    <div class="component-card coming-soon">
+                        <div class="component-preview">
+                            <div class="placeholder-content">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <path d="M9 9h6v6H9z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="component-info">
+                            <h3 class="component-name">More Components</h3>
+                            <p class="component-description">Additional components coming soon...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Tokens Section -->
+        <section id="tokens" class="tokens-section">
+            <div class="container">
+                <h2 class="section-title">Design Tokens</h2>
+                <div class="tokens-grid">
+                    <div class="token-category">
+                        <h3 class="token-category-title">Primary Colors</h3>
+                        <div class="color-tokens">
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #F78F25;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Primary-400</span>
+                                    <span class="token-value">#F78F25</span>
+                                </div>
+                            </div>
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #FEEFE1;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Primary-100</span>
+                                    <span class="token-value">#FEEFE1</span>
+                                </div>
+                            </div>
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #2A1B0E;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Primary-700</span>
+                                    <span class="token-value">#2A1B0E</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="token-category">
+                        <h3 class="token-category-title">Secondary Colors</h3>
+                        <div class="color-tokens">
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #D8226C;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Secondary-400</span>
+                                    <span class="token-value">#D8226C</span>
+                                </div>
+                            </div>
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #FDDDE4;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Secondary-100</span>
+                                    <span class="token-value">#FDDDE4</span>
+                                </div>
+                            </div>
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #2A0210;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Secondary-700</span>
+                                    <span class="token-value">#2A0210</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="token-category">
+                        <h3 class="token-category-title">Semantic Colors</h3>
+                        <div class="color-tokens">
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #167533;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Success</span>
+                                    <span class="token-value">#167533</span>
+                                </div>
+                            </div>
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #B41C2B;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Error</span>
+                                    <span class="token-value">#B41C2B</span>
+                                </div>
+                            </div>
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #EDC232;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Warning</span>
+                                    <span class="token-value">#EDC232</span>
+                                </div>
+                            </div>
+                            <div class="color-token">
+                                <div class="color-swatch" style="background-color: #3267B5;"></div>
+                                <div class="token-info">
+                                    <span class="token-name">Info</span>
+                                    <span class="token-value">#3267B5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="token-category">
+                        <h3 class="token-category-title">Typography Scale</h3>
+                        <div class="typography-tokens">
+                            <div class="typography-token">
+                                <span class="typography-sample h1">The quick</span>
+                                <div class="token-info">
+                                    <span class="token-name">H1</span>
+                                    <span class="token-value">Arial Rounded MT Bold, 40pt</span>
+                                </div>
+                            </div>
+                            <div class="typography-token">
+                                <span class="typography-sample h3">The quick</span>
+                                <div class="token-info">
+                                    <span class="token-name">H3</span>
+                                    <span class="token-value">Arial Rounded MT Bold, 32pt</span>
+                                </div>
+                            </div>
+                            <div class="typography-token">
+                                <span class="typography-sample body">The quick brown fox</span>
+                                <div class="token-info">
+                                    <span class="token-name">Body</span>
+                                    <span class="token-value">Arial, 14pt</span>
+                                </div>
+                            </div>
+                            <div class="typography-token">
+                                <span class="typography-sample caption-1">THE QUICK BROWN FOX</span>
+                                <div class="token-info">
+                                    <span class="token-name">Caption 1</span>
+                                    <span class="token-value">Arial, 12pt, Bold, Uppercase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tokens-cta">
+                    <a href="tokens.html" class="tokens-link">View All Tokens →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

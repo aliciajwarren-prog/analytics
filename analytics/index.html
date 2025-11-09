@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LibLynx Analytics Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <span class="brand-name">LibLynx</span>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-item">
+            <span class="nav-icon home" aria-hidden="true"></span>
+            Home
+          </button>
+          <button class="nav-item active">
+            <span class="nav-icon chart" aria-hidden="true"></span>
+            Data explorer
+          </button>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="main-header">
+          <div class="title-block">
+            <button class="back-button" aria-label="Back">
+              <span aria-hidden="true">←</span>
+            </button>
+            <div>
+              <h1>Data explorer</h1>
+              <p class="subtitle">Behind every title, there’s a story—find it with data</p>
+            </div>
+          </div>
+          <div class="header-actions">
+            <button class="icon-button" aria-label="Search"></button>
+            <button class="icon-button" aria-label="Notifications"></button>
+            <button class="icon-button" aria-label="Messages"></button>
+            <button class="avatar" aria-label="Account"></button>
+          </div>
+        </header>
+
+        <section class="controls">
+          <label class="select">
+            <span class="label">Imprint</span>
+            <select>
+              <option>ProQuest Live</option>
+            </select>
+          </label>
+          <div class="summary-cards" role="list">
+            <div class="summary-card" role="listitem">
+              <span class="summary-label">Views</span>
+              <span class="summary-value">75</span>
+            </div>
+            <div class="summary-card" role="listitem">
+              <span class="summary-label">Sessions</span>
+              <span class="summary-value">75</span>
+            </div>
+            <div class="summary-card" role="listitem">
+              <span class="summary-label">Denials</span>
+              <span class="summary-value">75</span>
+            </div>
+            <div class="summary-card" role="listitem">
+              <span class="summary-label">Unique titles</span>
+              <span class="summary-value">75</span>
+            </div>
+          </div>
+          <div class="filters">
+            <div class="chips-label">Analytics playground • <span id="playground-count">0</span> of 30</div>
+            <div class="chip-bin" id="chip-bin" aria-label="Fields to drag into the results table">
+              <button class="chip" draggable="true" data-field="accessType">Access type</button>
+              <button class="chip" draggable="true" data-field="country">Country</button>
+              <button class="chip" draggable="true" data-field="format">Format</button>
+              <button class="chip" draggable="true" data-field="organization">Organization</button>
+              <button class="chip" draggable="true" data-field="topic">Topic</button>
+            </div>
+            <div class="filters-actions">
+              <label class="select timeframe">
+                <span class="label">Timeframe</span>
+                <select id="timeframe">
+                  <option>Previous 12 months</option>
+                  <option>Last 30 days</option>
+                  <option>Last week</option>
+                  <option>Today</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="table-area">
+          <div id="dropzone" class="dropzone" tabindex="0" aria-label="Drop fields here to build the table">
+            <div id="active-view" class="active-view" hidden>
+              <div class="active-view-label">Current view</div>
+              <div id="applied-fields" class="applied-fields" role="list"></div>
+            </div>
+            <div id="empty-state" class="empty-state">
+              <div class="empty-illustration" aria-hidden="true"></div>
+              <p>Build your view</p>
+              <span>Drag and drop to customize</span>
+            </div>
+            <table id="results-table" class="results-table" hidden>
+              <caption class="sr-only">Analytics results</caption>
+              <thead>
+                <tr id="table-header"></tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
+

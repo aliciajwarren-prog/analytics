@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens - LibLynx Design System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <a href="index.html" class="logo">← LibLynx Design System</a>
+                <nav class="nav">
+                    <a href="index.html#components" class="nav-link">Components</a>
+                    <a href="#tokens" class="nav-link">Tokens</a>
+                    <a href="index.html#guidelines" class="nav-link">Guidelines</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Tokens Page -->
+        <main class="tokens-page">
+            <div class="container">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1 class="page-title">Design Tokens</h1>
+                    <p class="page-description">
+                        A comprehensive collection of design tokens including colors, typography, spacing, and more. 
+                        These tokens ensure consistency across all components and interfaces.
+                    </p>
+                </div>
+
+                <!-- Color Tokens -->
+                <section class="tokens-section">
+                    <h2 class="section-title">Colors</h2>
+                    
+                    <!-- Primary Colors -->
+                    <div class="color-palette">
+                        <h3 class="palette-title">Primary Colors</h3>
+                        <p class="palette-description">The primary color palette used for main brand elements and key actions.</p>
+                        <div class="color-scale">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #FEEFE1;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Primary-100</span>
+                                    <span class="color-value">#FEEFE1</span>
+                                    <span class="color-usage">Light backgrounds, containers</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #FFD8B1;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Primary-200</span>
+                                    <span class="color-value">#FFD8B1</span>
+                                    <span class="color-usage">Hover states, subtle highlights</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #FFB871;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Primary-300</span>
+                                    <span class="color-value">#FFB871</span>
+                                    <span class="color-usage">Active states, medium highlights</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #F78F25;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Primary-400</span>
+                                    <span class="color-value">#F78F25</span>
+                                    <span class="color-usage">Primary brand color, main actions</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #CA7522;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Primary-500</span>
+                                    <span class="color-value">#CA7522</span>
+                                    <span class="color-usage">Hover states, pressed states</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #4E3015;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Primary-600</span>
+                                    <span class="color-value">#4E3015</span>
+                                    <span class="color-usage">Text on light backgrounds</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #2A1B0E;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Primary-700</span>
+                                    <span class="color-value">#2A1B0E</span>
+                                    <span class="color-usage">Text on light backgrounds, emphasis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Colors -->
+                    <div class="color-palette">
+                        <h3 class="palette-title">Secondary Colors</h3>
+                        <p class="palette-description">The secondary color palette used for supporting elements and accents.</p>
+                        <div class="color-scale">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #FDDDE4;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Secondary-100</span>
+                                    <span class="color-value">#FDDDE4</span>
+                                    <span class="color-usage">Light backgrounds, containers</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #FAA5BA;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Secondary-200</span>
+                                    <span class="color-value">#FAA5BA</span>
+                                    <span class="color-usage">Hover states, subtle highlights</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #F86392;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Secondary-300</span>
+                                    <span class="color-value">#F86392</span>
+                                    <span class="color-usage">Active states, medium highlights</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #D8226C;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Secondary-400</span>
+                                    <span class="color-value">#D8226C</span>
+                                    <span class="color-usage">Secondary brand color, accents</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #9A154B;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Secondary-500</span>
+                                    <span class="color-value">#9A154B</span>
+                                    <span class="color-usage">Hover states, pressed states</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #60092C;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Secondary-600</span>
+                                    <span class="color-value">#60092C</span>
+                                    <span class="color-usage">Text on light backgrounds</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #2A0210;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Secondary-700</span>
+                                    <span class="color-value">#2A0210</span>
+                                    <span class="color-usage">Text on light backgrounds, emphasis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Semantic Colors -->
+                    <div class="color-palette">
+                        <h3 class="palette-title">Semantic Colors</h3>
+                        <p class="palette-description">Colors used to communicate status, feedback, and meaning.</p>
+                        
+                        <div class="semantic-colors">
+                            <div class="semantic-group">
+                                <h4 class="semantic-group-title">Success</h4>
+                                <div class="semantic-scale">
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #C0FFD7;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Success-100</span>
+                                            <span class="color-value">#C0FFD7</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #06EB8C;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Success-200</span>
+                                            <span class="color-value">#06EB8C</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #167533;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Success-500</span>
+                                            <span class="color-value">#167533</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="semantic-group">
+                                <h4 class="semantic-group-title">Error</h4>
+                                <div class="semantic-scale">
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #FDEBEF;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Error-100</span>
+                                            <span class="color-value">#FDEBEF</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #FAA5BA;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Error-200</span>
+                                            <span class="color-value">#FAA5BA</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #B41C2B;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Error-500</span>
+                                            <span class="color-value">#B41C2B</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="semantic-group">
+                                <h4 class="semantic-group-title">Warning</h4>
+                                <div class="semantic-scale">
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #FEFBEC;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Warning-100</span>
+                                            <span class="color-value">#FEFBEC</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #FDDDE4;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Warning-200</span>
+                                            <span class="color-value">#FDDDE4</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #EDC232;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Warning-400</span>
+                                            <span class="color-value">#EDC232</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="semantic-group">
+                                <h4 class="semantic-group-title">Info</h4>
+                                <div class="semantic-scale">
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #ECF0FF;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Info-100</span>
+                                            <span class="color-value">#ECF0FF</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #CDE2FD;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Info-200</span>
+                                            <span class="color-value">#CDE2FD</span>
+                                        </div>
+                                    </div>
+                                    <div class="color-item">
+                                        <div class="color-swatch" style="background-color: #3267B5;"></div>
+                                        <div class="color-info">
+                                            <span class="color-name">Info-500</span>
+                                            <span class="color-value">#3267B5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Neutral Colors -->
+                    <div class="color-palette">
+                        <h3 class="palette-title">Neutral Colors</h3>
+                        <p class="palette-description">Gray scale colors for text, borders, and backgrounds.</p>
+                        <div class="color-scale">
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #FFFFFF;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Gray-100</span>
+                                    <span class="color-value">#FFFFFF</span>
+                                    <span class="color-usage">Primary background</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #F8F9FA;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Gray-200</span>
+                                    <span class="color-value">#F8F9FA</span>
+                                    <span class="color-usage">Subtle backgrounds</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #EFF1F2;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Gray-300</span>
+                                    <span class="color-value">#EFF1F2</span>
+                                    <span class="color-usage">Surface variants</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #DEE2E6;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Gray-400</span>
+                                    <span class="color-value">#DEE2E6</span>
+                                    <span class="color-usage">Borders, dividers</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #CED4DA;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Gray-500</span>
+                                    <span class="color-value">#CED4DA</span>
+                                    <span class="color-usage">Disabled states</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #ADB5BD;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Gray-600</span>
+                                    <span class="color-value">#ADB5BD</span>
+                                    <span class="color-usage">Placeholder text</span>
+                                </div>
+                            </div>
+                            <div class="color-item">
+                                <div class="color-swatch" style="background-color: #495057;"></div>
+                                <div class="color-info">
+                                    <span class="color-name">Gray-700</span>
+                                    <span class="color-value">#495057</span>
+                                    <span class="color-usage">Secondary text</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Typography Tokens -->
+                <section class="tokens-section">
+                    <h2 class="section-title">Typography</h2>
+                    <p class="section-description">
+                        A comprehensive typography scale using Arial and Arial Rounded MT Bold fonts.
+                    </p>
+
+                    <div class="typography-palette">
+                        <div class="typography-group">
+                            <h3 class="typography-group-title">Headings</h3>
+                            <div class="typography-scale">
+                                <div class="typography-item">
+                                    <span class="typography-sample h1">The quick</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">H1</span>
+                                        <span class="typography-value">Arial Rounded MT Bold, 40pt, Bold</span>
+                                        <span class="typography-usage">Main page titles, hero headings</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample h2">The quick</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">H2</span>
+                                        <span class="typography-value">Arial Rounded MT Bold, 36pt, Bold</span>
+                                        <span class="typography-usage">Section headings, major titles</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample h3">The quick</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">H3</span>
+                                        <span class="typography-value">Arial Rounded MT Bold, 32pt, Bold</span>
+                                        <span class="typography-usage">Subsection headings</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample h4">The quick</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">H4</span>
+                                        <span class="typography-value">Arial Rounded MT Bold, 24pt, Bold</span>
+                                        <span class="typography-usage">Component titles, card headings</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample h5">The quick</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">H5</span>
+                                        <span class="typography-value">Arial Rounded MT Bold, 20pt, Regular</span>
+                                        <span class="typography-usage">Small headings, labels</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="typography-group">
+                            <h3 class="typography-group-title">Body Text</h3>
+                            <div class="typography-scale">
+                                <div class="typography-item">
+                                    <span class="typography-sample subtitle">The quick</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">Subtitle</span>
+                                        <span class="typography-value">Arial, 20pt, Regular</span>
+                                        <span class="typography-usage">Subtitles, introductory text</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample body-large">The quick brown fox</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">Body Large</span>
+                                        <span class="typography-value">Arial, 16pt, Bold</span>
+                                        <span class="typography-usage">Important body text, emphasis</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample body-large-light">The quick brown fox</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">Body Large Light</span>
+                                        <span class="typography-value">Arial, 16pt, Regular</span>
+                                        <span class="typography-usage">Large body text, descriptions</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample body">The quick brown fox</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">Body</span>
+                                        <span class="typography-value">Arial, 14pt, Bold</span>
+                                        <span class="typography-usage">Standard body text, emphasis</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample body-light">The quick brown fox</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">Body Light</span>
+                                        <span class="typography-value">Arial, 14pt, Regular</span>
+                                        <span class="typography-usage">Standard body text, descriptions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="typography-group">
+                            <h3 class="typography-group-title">Captions & Labels</h3>
+                            <div class="typography-scale">
+                                <div class="typography-item">
+                                    <span class="typography-sample caption-1">THE QUICK BROWN FOX</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">Caption 1</span>
+                                        <span class="typography-value">Arial, 12pt, Bold, Uppercase</span>
+                                        <span class="typography-usage">Labels, tags, small emphasis</span>
+                                    </div>
+                                </div>
+                                <div class="typography-item">
+                                    <span class="typography-sample caption-2">The quick brown fox</span>
+                                    <div class="typography-info">
+                                        <span class="typography-name">Caption 2</span>
+                                        <span class="typography-value">Arial, 12pt, Bold</span>
+                                        <span class="typography-usage">Small text, captions, metadata</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Site Tokens Section -->
+                <section class="tokens-section">
+                    <h2 class="section-title">Site Tokens</h2>
+                    <p class="section-description">
+                        Semantic tokens that map design tokens to specific UI locations and contexts. 
+                        These tokens provide clear guidance on where and how to use each color and typography token.
+                    </p>
+
+                    <div class="site-tokens-grid">
+                        <!-- Primary Site Tokens -->
+                        <div class="site-token-category">
+                            <h3 class="site-token-category-title">Primary Brand</h3>
+                            <div class="site-token-list">
+                                <div class="site-token-item">
+                                    <div class="site-token-preview primary-preview">
+                                        <div class="preview-element primary-main">Primary</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Primary</span>
+                                        <span class="site-token-value">#F78F25</span>
+                                        <span class="site-token-usage">Main brand color, primary buttons, links, highlights</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview primary-container-preview">
+                                        <div class="preview-element primary-container">Primary Container</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Primary Container</span>
+                                        <span class="site-token-value">#FEEFE1</span>
+                                        <span class="site-token-usage">Light backgrounds, subtle highlights, hover states</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview on-primary-preview">
+                                        <div class="preview-element on-primary">On Primary</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">On Primary</span>
+                                        <span class="site-token-value">#FFFFFF</span>
+                                        <span class="site-token-usage">Text and icons on primary backgrounds</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Site Tokens -->
+                        <div class="site-token-category">
+                            <h3 class="site-token-category-title">Secondary Brand</h3>
+                            <div class="site-token-list">
+                                <div class="site-token-item">
+                                    <div class="site-token-preview secondary-preview">
+                                        <div class="preview-element secondary-main">Secondary</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Secondary</span>
+                                        <span class="site-token-value">#D8226C</span>
+                                        <span class="site-token-usage">Secondary actions, accents, supporting elements</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview secondary-container-preview">
+                                        <div class="preview-element secondary-container">Secondary Container</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Secondary Container</span>
+                                        <span class="site-token-value">#FDDDE4</span>
+                                        <span class="site-token-usage">Light backgrounds, subtle secondary highlights</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview on-secondary-preview">
+                                        <div class="preview-element on-secondary">On Secondary</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">On Secondary</span>
+                                        <span class="site-token-value">#FFFFFF</span>
+                                        <span class="site-token-usage">Text and icons on secondary backgrounds</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Surface Site Tokens -->
+                        <div class="site-token-category">
+                            <h3 class="site-token-category-title">Surface & Background</h3>
+                            <div class="site-token-list">
+                                <div class="site-token-item">
+                                    <div class="site-token-preview surface-bright-preview">
+                                        <div class="preview-element surface-bright">Surface Bright</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Surface Bright</span>
+                                        <span class="site-token-value">#FFFFFF</span>
+                                        <span class="site-token-usage">Primary background, cards, modals</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview surface-variant-preview">
+                                        <div class="preview-element surface-variant">Surface Variant</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Surface Variant</span>
+                                        <span class="site-token-value">#EFF1F2</span>
+                                        <span class="site-token-usage">Subtle backgrounds, input fields, dividers</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview surface-dim-preview">
+                                        <div class="preview-element surface-dim">Surface Dim</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Surface Dim</span>
+                                        <span class="site-token-value">#CED4DA</span>
+                                        <span class="site-token-usage">Disabled states, inactive elements</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text Site Tokens -->
+                        <div class="site-token-category">
+                            <h3 class="site-token-category-title">Text & Content</h3>
+                            <div class="site-token-list">
+                                <div class="site-token-item">
+                                    <div class="site-token-preview on-surface-preview">
+                                        <div class="preview-element on-surface">On Surface</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">On Surface</span>
+                                        <span class="site-token-value">#0D0610</span>
+                                        <span class="site-token-usage">Primary text, headings, main content</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview on-surface-variant-preview">
+                                        <div class="preview-element on-surface-variant">On Surface Variant</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">On Surface Variant</span>
+                                        <span class="site-token-value">#495057</span>
+                                        <span class="site-token-usage">Secondary text, descriptions, labels</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview on-surface-dim-preview">
+                                        <div class="preview-element on-surface-dim">On Surface Dim</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">On Surface Dim</span>
+                                        <span class="site-token-value">#ADB5BD</span>
+                                        <span class="site-token-usage">Placeholder text, disabled text, hints</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Site Tokens -->
+                        <div class="site-token-category">
+                            <h3 class="site-token-category-title">Interactive Elements</h3>
+                            <div class="site-token-list">
+                                <div class="site-token-item">
+                                    <div class="site-token-preview outline-preview">
+                                        <div class="preview-element outline">Outline</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Outline</span>
+                                        <span class="site-token-value">#8D9CAA (75%)</span>
+                                        <span class="site-token-usage">Borders, dividers, input borders</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview outline-focus-preview">
+                                        <div class="preview-element outline-focus">Outline Focus</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Outline Focus</span>
+                                        <span class="site-token-value">#B8CBFF</span>
+                                        <span class="site-token-usage">Focus rings, active borders, highlights</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview hover-preview">
+                                        <div class="preview-element hover">Hover</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Hover</span>
+                                        <span class="site-token-value">#000000 (20%)</span>
+                                        <span class="site-token-usage">Hover overlays, interactive feedback</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Status Site Tokens -->
+                        <div class="site-token-category">
+                            <h3 class="site-token-category-title">Status & Feedback</h3>
+                            <div class="site-token-list">
+                                <div class="site-token-item">
+                                    <div class="site-token-preview success-preview">
+                                        <div class="preview-element success">Success</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Success</span>
+                                        <span class="site-token-value">#167533</span>
+                                        <span class="site-token-usage">Success states, positive feedback, confirmations</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview error-preview">
+                                        <div class="preview-element error">Error</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Error</span>
+                                        <span class="site-token-value">#B41C2B</span>
+                                        <span class="site-token-usage">Error states, validation errors, warnings</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview warning-preview">
+                                        <div class="preview-element warning">Warning</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Warning</span>
+                                        <span class="site-token-value">#EDC232</span>
+                                        <span class="site-token-usage">Warning states, caution messages, alerts</span>
+                                    </div>
+                                </div>
+                                <div class="site-token-item">
+                                    <div class="site-token-preview info-preview">
+                                        <div class="preview-element info">Info</div>
+                                    </div>
+                                    <div class="site-token-info">
+                                        <span class="site-token-name">Info</span>
+                                        <span class="site-token-value">#3267B5</span>
+                                        <span class="site-token-usage">Information states, tooltips, help text</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="tokens.js"></script>
+</body>
+</html>
