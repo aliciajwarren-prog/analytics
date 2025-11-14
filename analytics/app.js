@@ -3,7 +3,6 @@ const table = document.querySelector('#results-table');
 const tableHeader = document.querySelector('#table-header');
 const tableBody = document.querySelector('#table-body');
 const emptyState = document.querySelector('#empty-state');
-const clearButton = document.querySelector('#clear-view');
 const chipBin = document.querySelector('#chip-bin');
 const playgroundCount = document.querySelector('#playground-count');
 const tooltip = document.querySelector('#tooltip');
@@ -64,14 +63,62 @@ const viewDefinitions = {
       { key: 'sessions', label: 'Sessions', align: 'right' }
     ],
     rows: [
-      { rank: 1, organization: 'University of Toronto', country: 'Canada', sessions: 175, trend: 'stable' },
-      { rank: 2, organization: 'Washington State University', country: 'United States', sessions: 175, trend: 'up' },
-      { rank: 3, organization: 'University of Kansas', country: 'United States', sessions: 175, trend: 'flat' },
-      { rank: 4, organization: 'University of Calgary', country: 'Canada', sessions: 175, trend: 'down' },
-      { rank: 5, organization: 'University of Toronto', country: 'Canada', sessions: 175, trend: 'up' },
-      { rank: 6, organization: 'Washington State University', country: 'United States', sessions: 175, trend: 'flat' },
-      { rank: 7, organization: 'University of Kansas', country: 'United States', sessions: 175, trend: 'up' },
-      { rank: 8, organization: 'University of Calgary', country: 'Canada', sessions: 175, trend: 'down' }
+      {
+        rank: 1,
+        organization: 'University of Toronto',
+        country: { name: 'Canada', flag: 'https://flagcdn.com/w40/ca.png' },
+        sessions: 175,
+        trend: { direction: 'stable', series: [24, 23, 25, 24, 24, 23, 24, 23, 24, 24] }
+      },
+      {
+        rank: 2,
+        organization: 'Washington State University',
+        country: { name: 'United States', flag: 'https://flagcdn.com/w40/us.png' },
+        sessions: 175,
+        trend: { direction: 'up', series: [18, 19, 19, 20, 21, 22, 23, 24, 25, 26] }
+      },
+      {
+        rank: 3,
+        organization: 'University of Kansas',
+        country: { name: 'United States', flag: 'https://flagcdn.com/w40/us.png' },
+        sessions: 175,
+        trend: { direction: 'flat', series: [21, 21, 21, 21, 22, 22, 21, 21, 21, 21] }
+      },
+      {
+        rank: 4,
+        organization: 'University of Calgary',
+        country: { name: 'Canada', flag: 'https://flagcdn.com/w40/ca.png' },
+        sessions: 175,
+        trend: { direction: 'down', series: [26, 25, 24, 23, 22, 21, 21, 20, 19, 18] }
+      },
+      {
+        rank: 5,
+        organization: 'University of Toronto',
+        country: { name: 'Canada', flag: 'https://flagcdn.com/w40/ca.png' },
+        sessions: 175,
+        trend: { direction: 'up', series: [17, 18, 19, 19, 20, 21, 22, 23, 24, 24] }
+      },
+      {
+        rank: 6,
+        organization: 'Washington State University',
+        country: { name: 'United States', flag: 'https://flagcdn.com/w40/us.png' },
+        sessions: 175,
+        trend: { direction: 'flat', series: [20, 20, 19, 20, 19, 20, 20, 19, 20, 19] }
+      },
+      {
+        rank: 7,
+        organization: 'University of Kansas',
+        country: { name: 'United States', flag: 'https://flagcdn.com/w40/us.png' },
+        sessions: 175,
+        trend: { direction: 'up', series: [16, 17, 18, 19, 19, 20, 21, 21, 22, 22] }
+      },
+      {
+        rank: 8,
+        organization: 'University of Calgary',
+        country: { name: 'Canada', flag: 'https://flagcdn.com/w40/ca.png' },
+        sessions: 175,
+        trend: { direction: 'down', series: [23, 24, 23, 22, 21, 20, 19, 19, 18, 17] }
+      }
     ]
   },
   accessType: {
@@ -129,6 +176,61 @@ const viewDefinitions = {
 
 let activeField = null;
 let appliedFields = [];
+
+function buildSparkline(series, { width = 92, height = 36, stroke = '#6366f1', fill = 'rgba(99, 102, 241, 0.18)' } = {}) {
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('class', 'sparkline');
+  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+  svg.setAttribute('aria-hidden', 'true');
+
+  const min = Math.min(...series);
+  const max = Math.max(...series);
+  const range = max - min || 1;
+  const step = series.length > 1 ? width / (series.length - 1) : width;
+  const verticalPadding = 6;
+
+  const points = series.map((value, index) => {
+    const x = index * step;
+    const normalized = (value - min) / range;
+    const y = height - verticalPadding - normalized * (height - verticalPadding * 2);
+    return { x, y };
+  });
+
+  const areaPath = [`M 0 ${height}`, `L ${points[0].x} ${points[0].y}`];
+  const linePath = [`M ${points[0].x} ${points[0].y}`];
+
+  for (let i = 1; i < points.length; i += 1) {
+    areaPath.push(`L ${points[i].x} ${points[i].y}`);
+    linePath.push(`L ${points[i].x} ${points[i].y}`);
+  }
+
+  const lastPoint = points[points.length - 1];
+  areaPath.push(`L ${lastPoint.x} ${height}`, 'Z');
+
+  const area = document.createElementNS(svgNS, 'path');
+  area.setAttribute('class', 'sparkline-area');
+  area.setAttribute('d', areaPath.join(' '));
+  area.setAttribute('fill', fill);
+
+  const line = document.createElementNS(svgNS, 'path');
+  line.setAttribute('class', 'sparkline-line');
+  line.setAttribute('d', linePath.join(' '));
+  line.setAttribute('stroke', stroke);
+  line.setAttribute('fill', 'none');
+
+  const marker = document.createElementNS(svgNS, 'circle');
+  marker.setAttribute('class', 'sparkline-marker');
+  marker.setAttribute('cx', lastPoint.x);
+  marker.setAttribute('cy', lastPoint.y);
+  marker.setAttribute('r', 3);
+  marker.setAttribute('fill', stroke);
+  marker.setAttribute('stroke', '#ffffff');
+  marker.setAttribute('stroke-width', 1.5);
+
+  svg.append(area, line, marker);
+  return svg;
+}
 
 function updatePlaygroundCount() {
   playgroundCount.textContent = String(appliedFields.length);
@@ -252,34 +354,62 @@ function renderCountry(country) {
   const circle = document.createElement('span');
   circle.className = 'flag-circle';
 
-  if (country && country.flag) {
-    const img = document.createElement('img');
-    img.src = country.flag;
-    img.alt = `${country.name} flag`;
-    img.loading = 'lazy';
-    circle.appendChild(img);
-  } else if (country && country.tone) {
-    circle.style.background = `linear-gradient(135deg, ${country.tone[0]}, ${country.tone[1]})`;
-  }
-
   const name = document.createElement('span');
   name.textContent = country?.name ?? country ?? '—';
+
+  if (country && typeof country === 'object') {
+    if (country.flag) {
+      const img = document.createElement('img');
+      img.src = country.flag;
+      img.alt = `${country.name} flag`;
+      img.loading = 'lazy';
+      circle.appendChild(img);
+    } else if (country.tone) {
+      circle.style.background = `linear-gradient(135deg, ${country.tone[0]}, ${country.tone[1]})`;
+    }
+  }
 
   wrapper.append(circle, name);
   return wrapper;
 }
 
-function renderTrend(state) {
+function renderTrend(trend) {
   const wrapper = document.createElement('span');
   wrapper.className = 'trend';
 
-  const line = document.createElement('span');
-  line.className = 'trend-line';
+  if (!trend) {
+    wrapper.textContent = '—';
+    return wrapper;
+  }
+
+  const direction = trend.direction || 'flat';
+  const series = Array.isArray(trend.series) && trend.series.length ? trend.series : [0, 0];
+
+  const colors = {
+    up: '#16a34a',
+    down: '#dc2626',
+    stable: '#0ea5e9',
+    flat: '#6366f1'
+  };
+
+  const areaColors = {
+    up: 'rgba(22, 163, 74, 0.18)',
+    down: 'rgba(220, 38, 38, 0.18)',
+    stable: 'rgba(14, 165, 233, 0.18)',
+    flat: 'rgba(99, 102, 241, 0.18)'
+  };
+
+  const svg = buildSparkline(series, {
+    width: 92,
+    height: 36,
+    stroke: colors[direction] || colors.flat,
+    fill: areaColors[direction] || areaColors.flat
+  });
 
   const indicator = document.createElement('span');
   indicator.className = 'trend-indicator';
 
-  switch (state) {
+  switch (direction) {
     case 'up':
       indicator.textContent = '↑';
       indicator.classList.add('up');
@@ -287,20 +417,17 @@ function renderTrend(state) {
     case 'down':
       indicator.textContent = '↓';
       indicator.classList.add('down');
-      line.style.background = 'linear-gradient(120deg, rgba(239, 68, 68, 0.8), rgba(220, 38, 38, 0.7))';
       break;
     case 'stable':
       indicator.textContent = '↗';
       indicator.classList.add('up');
-      line.style.background = 'linear-gradient(120deg, rgba(14, 165, 233, 0.8), rgba(30, 64, 175, 0.7))';
       break;
     default:
       indicator.textContent = '→';
-      indicator.style.color = '#6b7280';
-      line.style.background = 'linear-gradient(120deg, rgba(107, 114, 128, 0.8), rgba(55, 65, 81, 0.7))';
+      indicator.classList.add('flat');
   }
 
-  wrapper.append(line, indicator);
+  wrapper.append(svg, indicator);
   return wrapper;
 }
 
@@ -365,14 +492,6 @@ function handleDropzoneKeydown(event) {
   }
 }
 
-function clearView() {
-  activeField = null;
-  appliedFields = [];
-  renderAppliedFields();
-  renderTable(null);
-  dropzone.focus();
-}
-
 function setActiveField(fieldId) {
   if (!viewDefinitions[fieldId]) return;
 
@@ -432,8 +551,6 @@ if (activeView) {
   activeView.addEventListener('dragover', handleDragOver);
   activeView.addEventListener('drop', handleDrop);
 }
-
-clearButton.addEventListener('click', clearView);
 
 // Provide click-to-apply behaviour for quicker prototyping.
 chipBin.querySelectorAll('.chip').forEach((chip) => {

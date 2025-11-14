@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;500&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="app-shell">
@@ -18,11 +19,11 @@
         </div>
         <nav class="sidebar-nav">
           <button class="nav-item">
-            <span class="nav-icon home" aria-hidden="true"></span>
+            <span class="material-symbols-rounded" aria-hidden="true">home</span>
             Home
           </button>
           <button class="nav-item active">
-            <span class="nav-icon chart" aria-hidden="true"></span>
+            <span class="material-symbols-rounded" aria-hidden="true">analytics</span>
             Data explorer
           </button>
         </nav>
@@ -30,19 +31,24 @@
       <main class="main">
         <header class="main-header">
           <div class="title-block">
-            <button class="back-button" aria-label="Back">
-              <span aria-hidden="true">←</span>
-            </button>
             <div>
               <h1>Data explorer</h1>
               <p class="subtitle">Behind every title, there’s a story—find it with data</p>
             </div>
           </div>
           <div class="header-actions">
-            <button class="icon-button" aria-label="Search"></button>
-            <button class="icon-button" aria-label="Notifications"></button>
-            <button class="icon-button" aria-label="Messages"></button>
-            <button class="avatar" aria-label="Account"></button>
+            <button class="icon-button" aria-label="Search">
+              <span class="material-symbols-rounded" aria-hidden="true">search</span>
+            </button>
+            <button class="icon-button" aria-label="Notifications">
+              <span class="material-symbols-rounded" aria-hidden="true">notifications</span>
+            </button>
+            <button class="icon-button" aria-label="Messages">
+              <span class="material-symbols-rounded" aria-hidden="true">mail</span>
+            </button>
+            <button class="icon-button avatar" aria-label="Account">
+              <span class="material-symbols-rounded" aria-hidden="true">account_circle</span>
+            </button>
           </div>
         </header>
 
@@ -55,18 +61,22 @@
           </label>
           <div class="summary-cards" role="list">
             <div class="summary-card" role="listitem">
+              <span class="summary-icon material-symbols-rounded" aria-hidden="true">visibility</span>
               <span class="summary-label">Views</span>
               <span class="summary-value">75</span>
             </div>
             <div class="summary-card" role="listitem">
+              <span class="summary-icon material-symbols-rounded" aria-hidden="true">schedule</span>
               <span class="summary-label">Sessions</span>
               <span class="summary-value">75</span>
             </div>
             <div class="summary-card" role="listitem">
+              <span class="summary-icon material-symbols-rounded" aria-hidden="true">block</span>
               <span class="summary-label">Denials</span>
               <span class="summary-value">75</span>
             </div>
             <div class="summary-card" role="listitem">
+              <span class="summary-icon material-symbols-rounded" aria-hidden="true">library_books</span>
               <span class="summary-label">Unique titles</span>
               <span class="summary-value">75</span>
             </div>
