@@ -184,6 +184,200 @@
                     </div>
                 </section>
 
+                <!-- CSS Snippet -->
+                <section class="code-snippet-section">
+                    <h2 class="section-title">CSS Snippet</h2>
+                    <div class="code-snippet-card">
+                        <div class="code-snippet-header">
+                            <h3 class="code-snippet-title">Copy and paste into your CSS</h3>
+                            <button class="copy-button" type="button" data-copy-target="dropdown-css-snippet">Copy CSS</button>
+                        </div>
+                        <pre class="code-block"><code id="dropdown-css-snippet">.dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border: 1px solid var(--outline-variant);
+    border-radius: 8px;
+    background: var(--surface-bright);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    position: relative;
+    width: 100%;
+}
+
+.dropdown.with-tag {
+    gap: 8px;
+}
+
+.dropdown-tag {
+    background: var(--surface-dim);
+    border: 1px solid var(--outline-variant);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--on-surface);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.dropdown-chevron {
+    color: var(--on-surface);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface-bright);
+    border: 1px solid var(--outline-variant);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s ease;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-option {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: var(--on-surface);
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid var(--surface-variant);
+    outline: none;
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background: var(--primary-100);
+    color: var(--primary-600);
+}
+
+.dropdown-option.selected {
+    background: var(--primary-400);
+    color: var(--surface-bright);
+}
+
+.dropdown-option.selected:hover {
+    background: var(--primary-500);
+    color: var(--surface-bright);
+}
+
+.dropdown-option:focus {
+    background: var(--primary-100);
+    color: var(--primary-600);
+    outline: 2px solid var(--primary-400);
+    outline-offset: -2px;
+}
+
+.dropdown-text {
+    color: var(--on-surface-variant);
+    font-size: 14px;
+    flex: 1;
+}
+
+.dropdown.state-default {
+    border-color: var(--outline-variant);
+    background: var(--surface-bright);
+}
+
+.dropdown.state-hover {
+    border-color: var(--primary-400);
+    background: var(--surface-bright);
+}
+
+.dropdown.state-focus {
+    border-color: var(--primary-400);
+    background: var(--surface-bright);
+    box-shadow: 0 0 0 3px rgba(247, 143, 37, 0.1);
+}
+
+.dropdown.state-disabled {
+    border-color: var(--outline-variant);
+    background: var(--surface-dim);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.dropdown.state-disabled .dropdown-text {
+    color: var(--on-surface-dim);
+}
+
+.dropdown.state-disabled .dropdown-chevron {
+    color: var(--on-surface-dim);
+}
+
+.dropdown.state-disabled .dropdown-tag {
+    background: var(--surface-dim);
+    border-color: var(--outline-variant);
+    color: var(--on-surface-dim);
+    opacity: 0.6;
+}
+
+.dropdown.state-error {
+    border-color: var(--error);
+    background: var(--surface-bright);
+}
+
+.dropdown.animate-hover {
+    animation: hoverPulse 0.6s ease;
+}
+
+.dropdown.animate-focus {
+    animation: focusGlow 0.6s ease;
+}
+
+.dropdown.animate-error {
+    animation: errorShake 0.6s ease;
+}
+
+@keyframes hoverPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); border-color: var(--primary-400); }
+    100% { transform: scale(1); }
+}
+
+@keyframes focusGlow {
+    0% { box-shadow: 0 0 0 0 rgba(247, 143, 37, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(247, 143, 37, 0.1); }
+    100% { box-shadow: 0 0 0 3px rgba(247, 143, 37, 0.1); }
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}</code></pre>
+                    </div>
+                </section>
+
                 <!-- Animation Demo -->
                 <section class="animation-section">
                     <h2 class="section-title">Animations</h2>

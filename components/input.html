@@ -139,6 +139,82 @@
                     </div>
                 </section>
 
+                <!-- CSS Snippet -->
+                <section class="code-snippet-section">
+                    <h2 class="section-title">CSS Snippet</h2>
+                    <div class="code-snippet-card">
+                        <div class="code-snippet-header">
+                            <h3 class="code-snippet-title">Copy and paste into your CSS</h3>
+                            <button class="copy-button" type="button" data-copy-target="input-css-snippet">Copy CSS</button>
+                        </div>
+                        <pre class="code-block"><code id="input-css-snippet">.input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid var(--outline-variant);
+    border-radius: 8px;
+    background: var(--surface-bright);
+    transition: all 0.2s ease;
+}
+
+.input.rectangular {
+    border-radius: 4px;
+}
+
+.input.rounded {
+    border-radius: 20px;
+}
+
+.input-field {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: var(--on-surface);
+    font-size: 14px;
+    font-family: var(--font-primary);
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: var(--on-surface-dim);
+}
+
+.input-field:disabled {
+    color: var(--on-surface-dim);
+    cursor: not-allowed;
+}
+
+.input.state-default {
+    border-color: var(--outline-variant);
+    background: var(--surface-bright);
+}
+
+.input.state-focus {
+    border-color: var(--primary-400);
+    background: var(--surface-bright);
+    box-shadow: 0 0 0 3px rgba(247, 143, 37, 0.1);
+}
+
+.input.state-disabled {
+    border-color: var(--outline-variant);
+    background: var(--surface-dim);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.input.state-filled {
+    border-color: var(--outline-variant);
+    background: var(--surface-bright);
+}
+
+.input.state-error {
+    border-color: var(--error);
+    background: var(--surface-bright);
+}</code></pre>
+                    </div>
+                </section>
 
                 <!-- Usage Guidelines -->
                 <section class="guidelines-section">

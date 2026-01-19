@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize component card animations
     initializeCardAnimations();
+
+    // Initialize copy buttons for code snippets
+    initializeCodeSnippetCopy();
 });
 
 function initializeDropdowns() {
@@ -104,6 +107,59 @@ function initializeCardAnimations() {
         
         observer.observe(card);
     });
+}
+
+function initializeCodeSnippetCopy() {
+    const copyButtons = document.querySelectorAll('[data-copy-target]');
+
+    copyButtons.forEach(button => {
+        button.addEventListener('click', async function() {
+            const targetId = this.getAttribute('data-copy-target');
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            const text = target.textContent || '';
+            try {
+                await navigator.clipboard.writeText(text.trim());
+                showCopiedState(this);
+            } catch (error) {
+                fallbackCopyText(text, this);
+            }
+        });
+    });
+}
+
+function showCopiedState(button) {
+    const originalText = button.textContent;
+    button.textContent = 'Copied';
+    button.classList.add('copied');
+
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('copied');
+    }, 1500);
+}
+
+function fallbackCopyText(text, button) {
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = text.trim();
+    tempTextArea.style.position = 'fixed';
+    tempTextArea.style.opacity = '0';
+    document.body.appendChild(tempTextArea);
+    tempTextArea.focus();
+    tempTextArea.select();
+
+    try {
+        document.execCommand('copy');
+        showCopiedState(button);
+    } catch (error) {
+        button.textContent = 'Copy failed';
+        setTimeout(() => {
+            button.textContent = 'Copy CSS';
+        }, 1500);
+    } finally {
+        document.body.removeChild(tempTextArea);
+    }
 }
 
 // Utility function to create animated state transitions
