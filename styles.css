@@ -579,6 +579,67 @@ body {
     box-shadow: 0 4px 12px rgba(247, 143, 37, 0.3);
 }
 
+/* Code Snippet Section */
+.code-snippet-section {
+    margin-bottom: 64px;
+}
+
+.code-snippet-card {
+    background: var(--surface-bright);
+    border: 1px solid var(--outline-variant);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.code-snippet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.code-snippet-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--on-surface);
+}
+
+.copy-button {
+    padding: 8px 14px;
+    border: 1px solid var(--primary-400);
+    border-radius: 6px;
+    background: var(--surface-bright);
+    color: var(--primary-400);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.copy-button:hover {
+    background: var(--primary-400);
+    color: var(--surface-bright);
+}
+
+.copy-button.copied {
+    background: var(--success-200);
+    border-color: var(--success-400);
+    color: var(--on-surface);
+}
+
+.code-block {
+    background: var(--surface-variant);
+    border-radius: 8px;
+    padding: 16px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
