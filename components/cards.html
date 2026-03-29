@@ -194,9 +194,10 @@
                     <div class="layout-example">
                         <h3 class="layout-title">Auto-fit grid</h3>
                         <p class="layout-description">
-                            Use auto-fit when content width varies. Cards resize while keeping a minimum width.
+                            Cards resize to fill the row while respecting a minimum width. All action rows stay pinned to the bottom regardless of how much content each card carries.
                         </p>
                         <div class="card-grid card-grid--auto card-grid--text-only">
+                            <!-- Short content -->
                             <article class="card card--compact">
                                 <div class="card-content">
                                     <p class="card-eyebrow">Featured</p>
@@ -207,23 +208,41 @@
                                     </div>
                                 </div>
                             </article>
+                            <!-- Medium content with a list -->
                             <article class="card card--compact">
                                 <div class="card-content">
-                                    <p class="card-eyebrow">List</p>
+                                    <p class="card-eyebrow">Resource list</p>
                                     <h3 class="card-title">Teacher Toolkits</h3>
-                                    <p class="card-description">Quick links to guides and handouts.</p>
+                                    <p class="card-description">Quick access to printable guides, lesson plans, and citation handouts for K–12 educators.</p>
+                                    <ul class="card-list">
+                                        <li class="card-list-item">
+                                            <span class="card-list-title">Citation Guide</span>
+                                            <span class="card-list-meta">PDF</span>
+                                        </li>
+                                        <li class="card-list-item">
+                                            <span class="card-list-title">Lesson Plan Templates</span>
+                                            <span class="card-list-meta">eBook</span>
+                                        </li>
+                                    </ul>
                                     <div class="card-actions">
                                         <a class="card-link" href="#">View list</a>
                                     </div>
                                 </div>
                             </article>
+                            <!-- Longer content with meta -->
                             <article class="card card--compact">
                                 <div class="card-content">
                                     <p class="card-eyebrow">Service</p>
-                                    <h3 class="card-title">Equipment Loans</h3>
-                                    <p class="card-description">Reserve laptops and tablets.</p>
+                                    <h3 class="card-title">Equipment Loans and Device Checkout</h3>
+                                    <p class="card-description">Reserve laptops, tablets, hotspots, and charging cables for up to 7 days. Available to all current cardholders.</p>
+                                    <div class="card-meta">
+                                        <span class="card-meta-item">7-day loan</span>
+                                        <span class="card-meta-sep">•</span>
+                                        <span class="card-meta-item">In-branch pickup</span>
+                                    </div>
                                     <div class="card-actions">
-                                        <a class="card-link" href="#">Check out</a>
+                                        <a class="card-link" href="#">Check availability</a>
+                                        <button class="card-button card-button--ghost" type="button">Reserve</button>
                                     </div>
                                 </div>
                             </article>
