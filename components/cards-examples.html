@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Examples - LibLynx Design System</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="container">
+                <a href="cards.html" class="logo">← Cards</a>
+                <nav class="nav">
+                    <a href="../index.html#components" class="nav-link">Components</a>
+                    <a href="../index.html#tokens" class="nav-link">Tokens</a>
+                    <a href="../index.html#guidelines" class="nav-link">Guidelines</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="component-page">
+            <div class="container">
+
+                <div class="component-header">
+                    <h1 class="component-title">Card Examples</h1>
+                    <p class="component-intro">
+                        The same card layouts shown on the <a href="cards.html" class="inline-link">Cards component page</a>,
+                        now with real images applied to each media slot.
+                    </p>
+                </div>
+
+                <!-- ─── Vertical grid with images ─── -->
+                <section class="demo-section">
+                    <h2 class="section-title">Vertical grid</h2>
+                    <div class="card-grid card-grid--auto">
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="../assets/img-medical-resources.png"
+                                     alt="Stack of medical reference books with a stethoscope on an ECG printout"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Featured resource</p>
+                                <h3 class="card-title">Clinical Reference Library</h3>
+                                <p class="card-description">
+                                    Essential medical databases, drug references, and diagnostic guides for
+                                    healthcare professionals and students.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">Database</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Updated today</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">View details</a>
+                                    <button class="card-button" type="button">Access</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="../assets/img-library-consultation.png"
+                                     alt="Student discussing research with a librarian at a library desk"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Resource list</p>
+                                <h3 class="card-title">Research Starter Picks</h3>
+                                <p class="card-description">
+                                    A curated list of databases and guides chosen for first-year researchers.
+                                </p>
+                                <ul class="card-list">
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">JSTOR Academic Archive</span>
+                                        <span class="card-list-meta">Database</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Citation Handbook</span>
+                                        <span class="card-list-meta">Guide</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">ProQuest Central</span>
+                                        <span class="card-list-meta">Database</span>
+                                    </li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">See full list</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="../assets/img-social-media.png"
+                                     alt="Hand holding a smartphone with social media app icons floating around it"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Digital Literacy Workshops</h3>
+                                <p class="card-description">
+                                    Hands-on sessions covering social media research, source evaluation, and
+                                    managing your digital footprint.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">60 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Register</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- ─── Horizontal layout with images ─── -->
+                <section class="demo-section">
+                    <h2 class="section-title">Horizontal layout</h2>
+                    <p class="section-description">
+                        Image fixed at 200 × 180 px on the left; content fills the right.
+                        Cards collapse to vertical stacks on narrow screens.
+                    </p>
+                    <div class="card-stack">
+
+                        <article class="card card--horizontal">
+                            <div class="card-media card-media--horizontal">
+                                <img src="../assets/img-medical-resources.png"
+                                     alt="Medical reference books with a stethoscope"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Featured resource</p>
+                                <h3 class="card-title">Clinical Reference Library</h3>
+                                <p class="card-description">
+                                    Essential medical databases and drug references for healthcare professionals.
+                                </p>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">View details</a>
+                                    <button class="card-button" type="button">Access</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card card--horizontal">
+                            <div class="card-media card-media--horizontal">
+                                <img src="../assets/img-library-consultation.png"
+                                     alt="Student and librarian in conversation at a library desk"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Research Consultations</h3>
+                                <p class="card-description">
+                                    Book a 1:1 session with a librarian to plan research, sources, and citations.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">30 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Schedule</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card card--horizontal">
+                            <div class="card-media card-media--horizontal">
+                                <img src="../assets/img-social-media.png"
+                                     alt="Smartphone with social media app icons floating around it"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Digital Literacy Workshops</h3>
+                                <p class="card-description">
+                                    Hands-on sessions covering social media research and source evaluation.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">60 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Register</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- Back link -->
+                <div class="back-link-row">
+                    <a href="cards.html" class="card-link">← Back to Cards component</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
