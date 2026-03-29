@@ -106,7 +106,9 @@
 .card-media--horizontal {
     aspect-ratio: unset;
     width: 200px;
+    height: 180px;
     flex-shrink: 0;
+    align-self: flex-start;
 }
 
 /* Stack horizontals at narrow widths */
