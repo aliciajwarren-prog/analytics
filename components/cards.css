@@ -148,11 +148,11 @@
     display: none;
 }
 
-/* Real image inside any media slot */
+/* Real image inside any media slot — contain so no cropping */
 .card-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
