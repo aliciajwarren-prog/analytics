@@ -215,6 +215,7 @@
 
 .card-link:hover {
     color: var(--primary-600);
+    text-decoration: underline;
 }
 
 .card-button {
@@ -237,10 +238,12 @@
 .card-button--ghost {
     background: transparent;
     color: var(--primary-500);
+    border-color: var(--primary-400);
 }
 
 .card-button--ghost:hover {
     background: var(--primary-100);
+    text-decoration: underline;
 }
 
 /* Layout Options */
