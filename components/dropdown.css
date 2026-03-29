@@ -229,26 +229,33 @@
     max-width: 300px;
 }
 
-/* Input + button label — layout helper only; uses .input and .animation-button as-is */
+/* Input + button label — one unified control */
 .input-button-group {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    align-items: stretch;
     width: 100%;
     max-width: 360px;
 }
 
+/* Left half: square off right corners and drop the shared border */
 .input-button-group .input {
     flex: 1;
     min-width: 0;
+    border-radius: 8px 0 0 8px;
+    border-right: none;
 }
 
+/* Right half: square off left corners, match input border, force black text */
 .input-button-group__btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     white-space: nowrap;
     flex-shrink: 0;
+    border-radius: 0 8px 8px 0;
+    border-color: var(--outline-variant);
+    color: var(--on-surface);
+    padding: 12px 16px;
 }
 
 .dropdown {

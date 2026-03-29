@@ -24,180 +24,275 @@
             </div>
         </header>
 
-        <!-- Component Page -->
         <main class="component-page">
             <div class="container">
-                <!-- Component Header -->
+
+                <!-- Page Header -->
                 <div class="component-header">
                     <h1 class="component-title">Cards</h1>
                     <p class="component-intro">
                         Cards present featured resources, curated lists, or library services in a consistent
-                        layout. They can include media or render text-only while preserving the same row rhythm.
+                        layout. They support images or render text-only while preserving the same row rhythm.
                     </p>
                 </div>
 
-                <!-- Card Types -->
+                <!-- ─── SECTION: Vertical cards with images ─── -->
                 <section class="demo-section">
-                    <h2 class="section-title">Card Types</h2>
+                    <h2 class="section-title">With images</h2>
+                    <div class="card-grid card-grid--auto">
 
-                    <!-- Row 1: with images -->
-                    <div class="card-row-group">
-                        <p class="card-row-label">With images</p>
-                        <div class="card-grid card-grid--auto">
-                            <article class="card">
-                                <div class="card-media" role="img" aria-label="Featured book cover placeholder"></div>
-                                <div class="card-content">
-                                    <p class="card-eyebrow">Featured resource</p>
-                                    <h3 class="card-title">The Modern Library Guide</h3>
-                                    <p class="card-description">
-                                        A practical overview of cataloging, discovery, and digital services for
-                                        community libraries.
-                                    </p>
-                                    <div class="card-meta">
-                                        <span class="card-meta-item">Book</span>
-                                        <span class="card-meta-sep">•</span>
-                                        <span class="card-meta-item">Updated 2 days ago</span>
-                                    </div>
-                                    <div class="card-actions">
-                                        <a class="card-link" href="#">View details</a>
-                                        <button class="card-button" type="button">Borrow</button>
-                                    </div>
+                        <!-- Featured resource -->
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="../assets/img-medical-resources.png"
+                                     alt="Stack of medical reference books with a stethoscope"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Featured resource</p>
+                                <h3 class="card-title">Clinical Reference Library</h3>
+                                <p class="card-description">
+                                    Essential medical databases, drug references, and diagnostic guides for
+                                    healthcare professionals and students.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">Database</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Updated today</span>
                                 </div>
-                            </article>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">View details</a>
+                                    <button class="card-button" type="button">Access</button>
+                                </div>
+                            </div>
+                        </article>
 
-                            <article class="card">
-                                <div class="card-media" role="img" aria-label="Resource list cover placeholder"></div>
-                                <div class="card-content">
-                                    <p class="card-eyebrow">Resource list</p>
-                                    <h3 class="card-title">Spring Reading Picks</h3>
-                                    <p class="card-description">
-                                        A curated list of new titles and digital resources for classroom use.
-                                    </p>
-                                    <ul class="card-list">
-                                        <li class="card-list-item">
-                                            <span class="card-list-title">Storytellers Collection</span>
-                                            <span class="card-list-meta">eBook</span>
-                                        </li>
-                                        <li class="card-list-item">
-                                            <span class="card-list-title">Community Archives</span>
-                                            <span class="card-list-meta">Database</span>
-                                        </li>
-                                        <li class="card-list-item">
-                                            <span class="card-list-title">Science Starter Pack</span>
-                                            <span class="card-list-meta">Guide</span>
-                                        </li>
-                                    </ul>
-                                    <div class="card-actions">
-                                        <a class="card-link" href="#">See full list</a>
-                                    </div>
+                        <!-- Resource list -->
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="../assets/img-library-consultation.png"
+                                     alt="Student discussing research with a librarian at a library desk"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Resource list</p>
+                                <h3 class="card-title">Research Starter Picks</h3>
+                                <p class="card-description">
+                                    A curated list of databases and guides chosen for first-year researchers.
+                                </p>
+                                <ul class="card-list">
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">JSTOR Academic Archive</span>
+                                        <span class="card-list-meta">Database</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Citation Handbook</span>
+                                        <span class="card-list-meta">Guide</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">ProQuest Central</span>
+                                        <span class="card-list-meta">Database</span>
+                                    </li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">See full list</a>
                                 </div>
-                            </article>
+                            </div>
+                        </article>
 
-                            <article class="card">
-                                <div class="card-media card-media--service" aria-hidden="true"></div>
-                                <div class="card-content">
-                                    <p class="card-eyebrow">Library service</p>
-                                    <h3 class="card-title">Research Consultations</h3>
-                                    <p class="card-description">
-                                        Book a 1:1 session with a librarian to plan research, sources, and citations.
-                                    </p>
-                                    <div class="card-meta">
-                                        <span class="card-meta-item">30 minutes</span>
-                                        <span class="card-meta-sep">•</span>
-                                        <span class="card-meta-item">Virtual or in-person</span>
-                                    </div>
-                                    <div class="card-actions">
-                                        <a class="card-link" href="#">Learn more</a>
-                                        <button class="card-button card-button--ghost" type="button">Schedule</button>
-                                    </div>
+                        <!-- Library service -->
+                        <article class="card">
+                            <div class="card-media">
+                                <img src="../assets/img-social-media.png"
+                                     alt="Hand holding a smartphone with social media app icons floating around it"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Digital Literacy Workshops</h3>
+                                <p class="card-description">
+                                    Hands-on sessions covering social media research, source evaluation, and
+                                    managing your digital footprint.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">60 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
                                 </div>
-                            </article>
-                        </div>
-                    </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Register</button>
+                                </div>
+                            </div>
+                        </article>
 
-                    <!-- Row 2: without images -->
-                    <div class="card-row-group">
-                        <p class="card-row-label">Without images</p>
-                        <div class="card-grid card-grid--auto card-grid--text-only">
-                            <article class="card">
-                                <div class="card-content">
-                                    <p class="card-eyebrow">Featured resource</p>
-                                    <h3 class="card-title">The Modern Library Guide</h3>
-                                    <p class="card-description">
-                                        A practical overview of cataloging, discovery, and digital services for
-                                        community libraries.
-                                    </p>
-                                    <div class="card-meta">
-                                        <span class="card-meta-item">Book</span>
-                                        <span class="card-meta-sep">•</span>
-                                        <span class="card-meta-item">Updated 2 days ago</span>
-                                    </div>
-                                    <div class="card-actions">
-                                        <a class="card-link" href="#">View details</a>
-                                        <button class="card-button" type="button">Borrow</button>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article class="card">
-                                <div class="card-content">
-                                    <p class="card-eyebrow">Resource list</p>
-                                    <h3 class="card-title">Spring Reading Picks</h3>
-                                    <p class="card-description">
-                                        A curated list of new titles and digital resources for classroom use.
-                                    </p>
-                                    <ul class="card-list">
-                                        <li class="card-list-item">
-                                            <span class="card-list-title">Storytellers Collection</span>
-                                            <span class="card-list-meta">eBook</span>
-                                        </li>
-                                        <li class="card-list-item">
-                                            <span class="card-list-title">Community Archives</span>
-                                            <span class="card-list-meta">Database</span>
-                                        </li>
-                                        <li class="card-list-item">
-                                            <span class="card-list-title">Science Starter Pack</span>
-                                            <span class="card-list-meta">Guide</span>
-                                        </li>
-                                    </ul>
-                                    <div class="card-actions">
-                                        <a class="card-link" href="#">See full list</a>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article class="card">
-                                <div class="card-content">
-                                    <p class="card-eyebrow">Library service</p>
-                                    <h3 class="card-title">Research Consultations</h3>
-                                    <p class="card-description">
-                                        Book a 1:1 session with a librarian to plan research, sources, and citations.
-                                    </p>
-                                    <div class="card-meta">
-                                        <span class="card-meta-item">30 minutes</span>
-                                        <span class="card-meta-sep">•</span>
-                                        <span class="card-meta-item">Virtual or in-person</span>
-                                    </div>
-                                    <div class="card-actions">
-                                        <a class="card-link" href="#">Learn more</a>
-                                        <button class="card-button card-button--ghost" type="button">Schedule</button>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
                     </div>
                 </section>
 
-                <!-- Layout Options -->
+                <!-- ─── SECTION: Vertical cards without images ─── -->
+                <section class="demo-section">
+                    <h2 class="section-title">Without images</h2>
+                    <div class="card-grid card-grid--auto card-grid--text-only">
+
+                        <article class="card">
+                            <div class="card-content">
+                                <p class="card-eyebrow">Featured resource</p>
+                                <h3 class="card-title">The Modern Library Guide</h3>
+                                <p class="card-description">
+                                    A practical overview of cataloging, discovery, and digital services for
+                                    community libraries.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">Book</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Updated 2 days ago</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">View details</a>
+                                    <button class="card-button" type="button">Borrow</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-content">
+                                <p class="card-eyebrow">Resource list</p>
+                                <h3 class="card-title">Spring Reading Picks</h3>
+                                <p class="card-description">
+                                    A curated list of new titles and digital resources for classroom use.
+                                </p>
+                                <ul class="card-list">
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Storytellers Collection</span>
+                                        <span class="card-list-meta">eBook</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Community Archives</span>
+                                        <span class="card-list-meta">Database</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Science Starter Pack</span>
+                                        <span class="card-list-meta">Guide</span>
+                                    </li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">See full list</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Research Consultations</h3>
+                                <p class="card-description">
+                                    Book a 1:1 session with a librarian to plan research, sources, and citations.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">30 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Schedule</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- ─── SECTION: Horizontal cards ─── -->
+                <section class="demo-section">
+                    <h2 class="section-title">Horizontal layout</h2>
+                    <p class="section-description">
+                        Use horizontal cards when a narrow, scannable list format is preferred over a grid.
+                        The image sits on the left; content fills the right.
+                    </p>
+                    <div class="card-stack">
+
+                        <article class="card card--horizontal">
+                            <div class="card-media card-media--horizontal">
+                                <img src="../assets/img-medical-resources.png"
+                                     alt="Medical reference books with a stethoscope"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Featured resource</p>
+                                <h3 class="card-title">Clinical Reference Library</h3>
+                                <p class="card-description">
+                                    Essential medical databases and drug references for healthcare professionals.
+                                </p>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">View details</a>
+                                    <button class="card-button" type="button">Access</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card card--horizontal">
+                            <div class="card-media card-media--horizontal">
+                                <img src="../assets/img-library-consultation.png"
+                                     alt="Student and librarian in conversation at a library desk"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Research Consultations</h3>
+                                <p class="card-description">
+                                    Book a 1:1 session with a librarian to plan research, sources, and citations.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">30 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Schedule</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card card--horizontal">
+                            <div class="card-media card-media--horizontal">
+                                <img src="../assets/img-social-media.png"
+                                     alt="Smartphone with social media app icons"
+                                     class="card-img">
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Digital Literacy Workshops</h3>
+                                <p class="card-description">
+                                    Hands-on sessions covering social media research and source evaluation.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">60 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Register</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- ─── SECTION: Layout options ─── -->
                 <section class="layout-section">
-                    <h2 class="section-title">Row System Layouts</h2>
+                    <h2 class="section-title">Grid layouts</h2>
+
                     <div class="layout-example">
                         <h3 class="layout-title">Auto-fit grid</h3>
                         <p class="layout-description">
-                            Cards resize to fill the row while respecting a minimum width. All action rows stay pinned to the bottom regardless of how much content each card carries.
+                            Cards resize to fill the row while respecting a minimum width. Action rows stay
+                            pinned to the bottom regardless of content height.
                         </p>
                         <div class="card-grid card-grid--auto card-grid--text-only">
-                            <!-- Short content -->
                             <article class="card card--compact">
                                 <div class="card-content">
                                     <p class="card-eyebrow">Featured</p>
@@ -208,7 +303,6 @@
                                     </div>
                                 </div>
                             </article>
-                            <!-- Medium content with a list -->
                             <article class="card card--compact">
                                 <div class="card-content">
                                     <p class="card-eyebrow">Resource list</p>
@@ -229,12 +323,11 @@
                                     </div>
                                 </div>
                             </article>
-                            <!-- Longer content with meta -->
                             <article class="card card--compact">
                                 <div class="card-content">
                                     <p class="card-eyebrow">Service</p>
                                     <h3 class="card-title">Equipment Loans and Device Checkout</h3>
-                                    <p class="card-description">Reserve laptops, tablets, hotspots, and charging cables for up to 7 days. Available to all current cardholders.</p>
+                                    <p class="card-description">Reserve laptops, tablets, hotspots, and charging cables for up to 7 days.</p>
                                     <div class="card-meta">
                                         <span class="card-meta-item">7-day loan</span>
                                         <span class="card-meta-sep">•</span>
@@ -250,7 +343,7 @@
                     </div>
 
                     <div class="layout-example">
-                        <h3 class="layout-title">Fixed columns per breakpoint</h3>
+                        <h3 class="layout-title">Fixed 4-column grid</h3>
                         <p class="layout-description">
                             Use fixed columns to maintain a strict rhythm across pages or sections.
                         </p>
@@ -299,9 +392,9 @@
                     </div>
                 </section>
 
-                <!-- Row System Rules -->
+                <!-- ─── SECTION: Guidelines ─── -->
                 <section class="guidelines-section">
-                    <h2 class="section-title">Row System Rules</h2>
+                    <h2 class="section-title">Usage Guidelines</h2>
                     <div class="guidelines-content">
                         <div class="guideline">
                             <h3 class="guideline-title">Sizing and spacing</h3>
@@ -312,22 +405,20 @@
                                 <li>Align cards to stretch height within a row.</li>
                             </ul>
                         </div>
-
                         <div class="guideline">
                             <h3 class="guideline-title">Media rules</h3>
                             <ul class="guideline-list">
                                 <li>If any card in a row has no image, remove the media slot from all cards in that row.</li>
-                                <li>Keep aspect ratios consistent (16:9 or 4:3) across image rows.</li>
-                                <li>Use <code>card-grid--text-only</code> on the grid to suppress all media slots at once.</li>
+                                <li>Keep aspect ratios consistent (16:9) across image rows.</li>
+                                <li>Use <code>card-grid--text-only</code> to suppress all media slots at once.</li>
                                 <li>Never mix image and no-image cards in the same row.</li>
                             </ul>
                         </div>
-
                         <div class="guideline">
                             <h3 class="guideline-title">Content rhythm</h3>
                             <ul class="guideline-list">
-                                <li>Clamp titles and summaries to keep rows even.</li>
-                                <li>Place actions at the bottom to align buttons.</li>
+                                <li>Clamp titles and summaries to keep rows visually even.</li>
+                                <li>Always place actions at the bottom to align buttons across cards.</li>
                                 <li>Use consistent metadata styling for type and timing.</li>
                                 <li>Avoid mixing more than two action styles per row.</li>
                             </ul>
@@ -335,7 +426,7 @@
                     </div>
                 </section>
 
-                <!-- CSS Snippet -->
+                <!-- ─── SECTION: CSS Snippet ─── -->
                 <section class="code-snippet-section">
                     <h2 class="section-title">CSS Snippet</h2>
                     <div class="code-snippet-card">
@@ -357,7 +448,7 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-/* Add to any row where one or more cards lack an image */
+/* Suppress media slots when any card in the row lacks an image */
 .card-grid--text-only .card-media {
     display: none;
 }
@@ -371,9 +462,27 @@
     overflow: hidden;
 }
 
+/* Horizontal variant */
+.card--horizontal {
+    flex-direction: row;
+}
+
 .card-media {
     aspect-ratio: 16 / 9;
-    background: var(--surface-variant);
+    overflow: hidden;
+}
+
+.card-media--horizontal {
+    aspect-ratio: unset;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card-actions {
@@ -383,6 +492,7 @@
 }</code></pre>
                     </div>
                 </section>
+
             </div>
         </main>
     </div>

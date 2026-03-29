@@ -38,21 +38,12 @@
     margin-bottom: 64px;
 }
 
-.card-row-group {
-    margin-bottom: 40px;
-}
-
-.card-row-group:last-child {
-    margin-bottom: 0;
-}
-
-.card-row-label {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: var(--on-surface-dim);
-    margin-bottom: 16px;
+.section-description {
+    color: var(--on-surface-variant);
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 640px;
+    margin-bottom: 28px;
 }
 
 /* Cards */
@@ -88,19 +79,9 @@
 
 .card-media {
     aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, var(--primary-100), var(--secondary-100));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-600);
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    min-height: 120px;
-}
-
-.card-media--service {
-    background: linear-gradient(135deg, var(--blue-100), var(--primary-100));
-    color: var(--blue-600);
+    overflow: hidden;
+    background: var(--surface-variant);
+    flex-shrink: 0;
 }
 
 /* Suppress media slots on all cards in a row when any card lacks an image */
@@ -108,9 +89,42 @@
     display: none;
 }
 
-.card-media-label {
-    font-size: 13px;
-    text-transform: uppercase;
+/* Real image inside any media slot */
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ─── Horizontal card variant ─── */
+.card--horizontal {
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.card-media--horizontal {
+    aspect-ratio: unset;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+/* Stack horizontals at narrow widths */
+@media (max-width: 640px) {
+    .card--horizontal {
+        flex-direction: column;
+    }
+    .card-media--horizontal {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* Vertical stack for horizontal cards */
+.card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .card-content {
