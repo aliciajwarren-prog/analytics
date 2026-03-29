@@ -113,6 +113,11 @@
     /* Focus ring — used for box-shadow on focused elements */
     --focus-ring: rgba(119, 89, 194, 0.18);
 
+    /* Component Size Tokens */
+    --component-height-sm: 36px;
+    --component-height-md: 40px;
+    --component-height-lg: 44px;
+
     /* Typography */
     --font-primary: 'Arial', sans-serif;
     --font-display: 'Arial Rounded MT Bold', 'Arial', sans-serif;

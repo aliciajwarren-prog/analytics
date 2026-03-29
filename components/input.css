@@ -97,6 +97,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    min-height: var(--component-height-md);
     border: 1px solid var(--outline-variant);
     border-radius: 8px;
     background: var(--surface-bright);
@@ -113,13 +114,32 @@
 
 .input-field {
     flex: 1;
-    padding: 12px 16px;
+    padding: 9px 14px;
     border: none;
     background: transparent;
     color: var(--on-surface);
     font-size: 14px;
     font-family: var(--font-primary);
     outline: none;
+}
+
+/* Size variants */
+.input--sm {
+    min-height: var(--component-height-sm);
+}
+
+.input--sm .input-field {
+    padding: 7px 12px;
+    font-size: 13px;
+}
+
+.input--lg {
+    min-height: var(--component-height-lg);
+}
+
+.input--lg .input-field {
+    padding: 10px 16px;
+    font-size: 16px;
 }
 
 .input-field::placeholder {
@@ -205,6 +225,61 @@
     color: var(--on-surface-variant);
     font-size: 14px;
     line-height: 1.5;
+}
+
+/* Sizes Section */
+.sizes-section {
+    margin-bottom: 64px;
+}
+
+.sizes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+}
+
+.size-example {
+    background: var(--surface-bright);
+    border: 1px solid var(--outline-variant);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.size-label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--on-surface);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.size-px {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--on-surface-dim);
+}
+
+.size-default {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--primary-100);
+    color: var(--primary-600);
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+
+.size-preview {
+    background: var(--surface-variant);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Variants Section */
