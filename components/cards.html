@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards Component - LibLynx Design System</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <a href="../index.html" class="logo">← LibLynx Design System</a>
+                <nav class="nav">
+                    <a href="../index.html#components" class="nav-link">Components</a>
+                    <a href="../index.html#tokens" class="nav-link">Tokens</a>
+                    <a href="../index.html#guidelines" class="nav-link">Guidelines</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Component Page -->
+        <main class="component-page">
+            <div class="container">
+                <!-- Component Header -->
+                <div class="component-header">
+                    <h1 class="component-title">Cards</h1>
+                    <p class="component-intro">
+                        Cards present featured resources, curated lists, or library services in a consistent
+                        layout. They can include media or render text-only while preserving the same row rhythm.
+                    </p>
+                </div>
+
+                <!-- Card Types -->
+                <section class="demo-section">
+                    <h2 class="section-title">Card Types</h2>
+                    <div class="card-grid card-grid--auto">
+                        <article class="card">
+                            <div class="card-media" role="img" aria-label="Featured book cover placeholder">
+                                <span class="card-media-label">Featured</span>
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Featured resource</p>
+                                <h3 class="card-title">The Modern Library Guide</h3>
+                                <p class="card-description">
+                                    A practical overview of cataloging, discovery, and digital services for
+                                    community libraries.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">Book</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Updated 2 days ago</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">View details</a>
+                                    <button class="card-button" type="button">Borrow</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card card--no-media">
+                            <div class="card-media" role="img" aria-label="No image placeholder">
+                                <span class="card-media-label">No image</span>
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Resource list</p>
+                                <h3 class="card-title">Spring Reading Picks</h3>
+                                <p class="card-description">
+                                    A curated list of new titles and digital resources for classroom use.
+                                </p>
+                                <ul class="card-list">
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Storytellers Collection</span>
+                                        <span class="card-list-meta">eBook</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Community Archives</span>
+                                        <span class="card-list-meta">Database</span>
+                                    </li>
+                                    <li class="card-list-item">
+                                        <span class="card-list-title">Science Starter Pack</span>
+                                        <span class="card-list-meta">Guide</span>
+                                    </li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">See full list</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-media card-media--service" aria-hidden="true">
+                                <span class="card-media-label">Service</span>
+                            </div>
+                            <div class="card-content">
+                                <p class="card-eyebrow">Library service</p>
+                                <h3 class="card-title">Research Consultations</h3>
+                                <p class="card-description">
+                                    Book a 1:1 session with a librarian to plan research, sources, and citations.
+                                </p>
+                                <div class="card-meta">
+                                    <span class="card-meta-item">30 minutes</span>
+                                    <span class="card-meta-sep">•</span>
+                                    <span class="card-meta-item">Virtual or in-person</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link" href="#">Learn more</a>
+                                    <button class="card-button card-button--ghost" type="button">Schedule</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Layout Options -->
+                <section class="layout-section">
+                    <h2 class="section-title">Row System Layouts</h2>
+                    <div class="layout-example">
+                        <h3 class="layout-title">Auto-fit grid</h3>
+                        <p class="layout-description">
+                            Use auto-fit when content width varies. Cards resize while keeping a minimum width.
+                        </p>
+                        <div class="card-grid card-grid--auto">
+                            <article class="card card--compact">
+                                <div class="card-media" role="img" aria-label="Cover placeholder">
+                                    <span class="card-media-label">Cover</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-eyebrow">Featured</p>
+                                    <h3 class="card-title">Local History Digest</h3>
+                                    <p class="card-description">Highlights from the community archive.</p>
+                                    <div class="card-actions">
+                                        <a class="card-link" href="#">Explore</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="card card--compact card--no-media">
+                                <div class="card-media" role="img" aria-label="No image placeholder">
+                                    <span class="card-media-label">No image</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-eyebrow">List</p>
+                                    <h3 class="card-title">Teacher Toolkits</h3>
+                                    <p class="card-description">Quick links to guides and handouts.</p>
+                                    <div class="card-actions">
+                                        <a class="card-link" href="#">View list</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="card card--compact">
+                                <div class="card-media card-media--service" aria-hidden="true">
+                                    <span class="card-media-label">Service</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-eyebrow">Service</p>
+                                    <h3 class="card-title">Equipment Loans</h3>
+                                    <p class="card-description">Reserve laptops and tablets.</p>
+                                    <div class="card-actions">
+                                        <a class="card-link" href="#">Check out</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="layout-example">
+                        <h3 class="layout-title">Fixed columns per breakpoint</h3>
+                        <p class="layout-description">
+                            Use fixed columns to maintain a strict rhythm across pages or sections.
+                        </p>
+                        <div class="card-grid card-grid--fixed">
+                            <article class="card card--compact">
+                                <div class="card-media" role="img" aria-label="Cover placeholder">
+                                    <span class="card-media-label">Cover</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-eyebrow">Featured</p>
+                                    <h3 class="card-title">Open Access Starter</h3>
+                                    <p class="card-description">Core journals and collections.</p>
+                                    <div class="card-actions">
+                                        <a class="card-link" href="#">Review</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="card card--compact card--no-media">
+                                <div class="card-media" role="img" aria-label="No image placeholder">
+                                    <span class="card-media-label">No image</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-eyebrow">Service</p>
+                                    <h3 class="card-title">Library Orientations</h3>
+                                    <p class="card-description">Onboarding for new students.</p>
+                                    <div class="card-actions">
+                                        <a class="card-link" href="#">Plan visit</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="card card--compact">
+                                <div class="card-media" role="img" aria-label="Cover placeholder">
+                                    <span class="card-media-label">Guide</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-eyebrow">List</p>
+                                    <h3 class="card-title">Research Help Hub</h3>
+                                    <p class="card-description">Tip sheets and tutorials.</p>
+                                    <div class="card-actions">
+                                        <a class="card-link" href="#">Open</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="card card--compact">
+                                <div class="card-media card-media--service" aria-hidden="true">
+                                    <span class="card-media-label">Service</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="card-eyebrow">Service</p>
+                                    <h3 class="card-title">Printing Support</h3>
+                                    <p class="card-description">Fast help with printers and scanners.</p>
+                                    <div class="card-actions">
+                                        <a class="card-link" href="#">Get help</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Row System Rules -->
+                <section class="guidelines-section">
+                    <h2 class="section-title">Row System Rules</h2>
+                    <div class="guidelines-content">
+                        <div class="guideline">
+                            <h3 class="guideline-title">Sizing and spacing</h3>
+                            <ul class="guideline-list">
+                                <li>Use one grid per row system with consistent gap values.</li>
+                                <li>Use a shared minimum card width to avoid narrow columns.</li>
+                                <li>Keep card padding consistent across card types.</li>
+                                <li>Align cards to stretch height within a row.</li>
+                            </ul>
+                        </div>
+
+                        <div class="guideline">
+                            <h3 class="guideline-title">Media rules</h3>
+                            <ul class="guideline-list">
+                                <li>Reserve the same media slot for all cards in a row.</li>
+                                <li>Keep aspect ratios consistent (16:9 or 4:3).</li>
+                                <li>Use a placeholder treatment when no image is available.</li>
+                                <li>Keep media optional; avoid removing the slot entirely.</li>
+                            </ul>
+                        </div>
+
+                        <div class="guideline">
+                            <h3 class="guideline-title">Content rhythm</h3>
+                            <ul class="guideline-list">
+                                <li>Clamp titles and summaries to keep rows even.</li>
+                                <li>Place actions at the bottom to align buttons.</li>
+                                <li>Use consistent metadata styling for type and timing.</li>
+                                <li>Avoid mixing more than two action styles per row.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CSS Snippet -->
+                <section class="code-snippet-section">
+                    <h2 class="section-title">CSS Snippet</h2>
+                    <div class="code-snippet-card">
+                        <div class="code-snippet-header">
+                            <h3 class="code-snippet-title">Copy and paste into your CSS</h3>
+                            <button class="copy-button" type="button" data-copy-target="cards-css-snippet">Copy CSS</button>
+                        </div>
+                        <pre class="code-block"><code id="cards-css-snippet">.card-grid {
+    display: grid;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.card-grid--auto {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card-grid--fixed {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-bright);
+    border: 1px solid var(--outline-variant);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-media {
+    aspect-ratio: 16 / 9;
+    background: var(--surface-variant);
+}
+
+.card-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 12px;
+}</code></pre>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
