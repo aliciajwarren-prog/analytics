@@ -41,7 +41,7 @@
                     <h2 class="section-title">Interactive Demo</h2>
                     <div class="demo-container">
                         <div class="demo-controls">
-                            <button class="demo-button" data-state="default">Default</button>
+                            <button class="demo-button active" data-state="default">Default</button>
                             <button class="demo-button" data-state="hover">Hover</button>
                             <button class="demo-button" data-state="focus">Focus</button>
                             <button class="demo-button" data-state="disabled">Disabled</button>
@@ -140,12 +140,25 @@
                     </div>
                 </section>
 
-                <!-- Variants -->
+                <!-- Props -->
                 <section class="variants-section">
-                    <h2 class="section-title">Variants</h2>
+                    <h2 class="section-title">Props</h2>
                     <div class="variants-grid">
                         <div class="variant-example">
-                            <h3 class="variant-title">With Selected Value</h3>
+                            <h3 class="variant-title">Standalone</h3>
+                            <div class="variant-preview">
+                                <div class="dropdown">
+                                    <span class="dropdown-text">Select database</span>
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="variant-description">Single control when no field or category label is needed.</p>
+                        </div>
+
+                        <div class="variant-example">
+                            <h3 class="variant-title">With selected value</h3>
                             <div class="variant-preview">
                                 <div class="dropdown">
                                     <span class="dropdown-text">EBSCOHost</span>
@@ -154,32 +167,25 @@
                                     </svg>
                                 </div>
                             </div>
+                            <p class="variant-description">Placeholder replaced after a choice is made.</p>
                         </div>
 
                         <div class="variant-example">
-                            <h3 class="variant-title">With Tag</h3>
+                            <h3 class="variant-title">Input group</h3>
                             <div class="variant-preview">
-                                <div class="dropdown with-tag">
-                                    <span class="dropdown-text">Select database</span>
-                                    <span class="dropdown-tag">Books</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                <div class="input-button-group">
+                                    <div class="input">
+                                        <input type="text" class="input-field" value="EBSCOHost" readonly>
+                                    </div>
+                                    <button type="button" class="animation-button input-button-group__btn">
+                                        Books
+                                        <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="variant-example">
-                            <h3 class="variant-title">With Tag and Selected Value</h3>
-                            <div class="variant-preview">
-                                <div class="dropdown with-tag">
-                                    <span class="dropdown-text">EBSCOHost</span>
-                                    <span class="dropdown-tag">Books</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
+                            <p class="variant-description">Pairs the standard input with a labeled button to show a fixed context such as a category, format, or scope.</p>
                         </div>
                     </div>
                 </section>
@@ -214,20 +220,9 @@
     width: 100%;
 }
 
-.dropdown.with-tag {
-    gap: 8px;
-}
-
-.dropdown-tag {
-    background: var(--surface-dim);
-    border: 1px solid var(--outline-variant);
-    border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--on-surface);
-    white-space: nowrap;
-    flex-shrink: 0;
+/* Input + dropdown button (full rules in dropdown.css) */
+.dropdown-wrapper.dropdown-combo-wrapper {
+    max-width: 420px;
 }
 
 .dropdown-chevron {
@@ -332,13 +327,6 @@
 
 .dropdown.state-disabled .dropdown-chevron {
     color: var(--on-surface-dim);
-}
-
-.dropdown.state-disabled .dropdown-tag {
-    background: var(--surface-dim);
-    border-color: var(--outline-variant);
-    color: var(--on-surface-dim);
-    opacity: 0.6;
 }
 
 .dropdown.state-error {
