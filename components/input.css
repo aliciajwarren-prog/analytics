@@ -195,7 +195,8 @@
     background: var(--surface-bright);
     border: 1px solid var(--outline-variant);
     border-radius: 12px;
-    padding: 24px;
+    padding: 0;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
@@ -207,15 +208,16 @@
 .state-title {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+    padding: 20px 20px 16px;
     color: var(--on-surface);
 }
 
 .state-preview {
     background: var(--surface-variant);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -225,6 +227,7 @@
     color: var(--on-surface-variant);
     font-size: 14px;
     line-height: 1.5;
+    padding: 12px 20px 20px;
 }
 
 /* Sizes Section */
@@ -242,13 +245,15 @@
     background: var(--surface-bright);
     border: 1px solid var(--outline-variant);
     border-radius: 12px;
-    padding: 24px;
+    padding: 0;
+    overflow: hidden;
 }
 
 .size-label {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+    padding: 20px 20px 16px;
     color: var(--on-surface);
     display: flex;
     align-items: center;
@@ -274,9 +279,9 @@
 
 .size-preview {
     background: var(--surface-variant);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -297,7 +302,8 @@
     background: var(--surface-bright);
     border: 1px solid var(--outline-variant);
     border-radius: 12px;
-    padding: 24px;
+    padding: 0;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 
@@ -309,13 +315,14 @@
 .variant-title {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+    padding: 20px 20px 16px;
     color: var(--on-surface);
 }
 
 .variant-preview {
     background: var(--surface-variant);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -326,7 +333,8 @@
     color: var(--on-surface-variant);
     font-size: 14px;
     line-height: 1.5;
-    margin-top: 12px;
+    padding: 12px 20px 20px;
+    margin-top: 0;
 }
 
 
