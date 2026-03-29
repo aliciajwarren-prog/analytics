@@ -38,6 +38,23 @@
     margin-bottom: 64px;
 }
 
+.card-row-group {
+    margin-bottom: 40px;
+}
+
+.card-row-group:last-child {
+    margin-bottom: 0;
+}
+
+.card-row-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--on-surface-dim);
+    margin-bottom: 16px;
+}
+
 /* Cards */
 .card-grid {
     display: grid;
