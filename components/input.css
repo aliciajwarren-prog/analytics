@@ -140,7 +140,7 @@
 .input.state-focus {
     border-color: var(--primary-400);
     background: var(--surface-bright);
-    box-shadow: 0 0 0 3px rgba(119, 89, 194, 0.15);
+    box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 .input.state-disabled {

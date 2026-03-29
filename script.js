@@ -1,5 +1,11 @@
 // Interactive functionality for the design system
 document.addEventListener('DOMContentLoaded', function() {
+    // Apply saved theme before anything else renders
+    initializeTheme();
+
+    // Inject theme switcher into the header
+    initializeThemeSwitcher();
+
     // Initialize dropdown interactions
     initializeDropdowns();
     
@@ -198,10 +204,75 @@ function animateStateTransition(element, newState, duration = 300) {
     }
 }
 
+// ─── Theme switcher ───────────────────────────────────────────────────────────
+
+const THEME_KEY = 'ds-theme';
+
+const THEME_LABELS = {
+    liblynx: 'LibLynx',
+    va: 'VA',
+    osler: 'Osler',
+};
+
+function initializeTheme() {
+    const saved = localStorage.getItem(THEME_KEY) || 'liblynx';
+    applyTheme(saved);
+}
+
+function applyTheme(theme) {
+    if (theme === 'liblynx') {
+        document.documentElement.removeAttribute('data-theme');
+    } else {
+        document.documentElement.setAttribute('data-theme', theme);
+    }
+    localStorage.setItem(THEME_KEY, theme);
+}
+
+function initializeThemeSwitcher() {
+    const container = document.querySelector('.header .container');
+    if (!container) return;
+
+    // Wrap existing nav + new switcher together on the right
+    const nav = container.querySelector('.nav');
+    const headerEnd = document.createElement('div');
+    headerEnd.className = 'header-end';
+    if (nav) {
+        container.insertBefore(headerEnd, nav);
+        headerEnd.appendChild(nav);
+    } else {
+        container.appendChild(headerEnd);
+    }
+
+    // Build switcher
+    const switcher = document.createElement('div');
+    switcher.className = 'theme-switcher';
+    switcher.innerHTML = `
+        <label for="theme-select" class="theme-label">Theme</label>
+        <select id="theme-select" class="theme-select" aria-label="Switch theme">
+            <option value="liblynx">LibLynx</option>
+            <optgroup label="Whitelabeled">
+                <option value="va">VA</option>
+                <option value="osler">Osler</option>
+            </optgroup>
+        </select>
+    `;
+    headerEnd.appendChild(switcher);
+
+    // Restore saved selection
+    const select = switcher.querySelector('#theme-select');
+    const saved = localStorage.getItem(THEME_KEY) || 'liblynx';
+    select.value = saved;
+
+    select.addEventListener('change', function () {
+        applyTheme(this.value);
+    });
+}
+
 // Export functions for use in component pages
 window.DesignSystem = {
     animateStateTransition,
     initializeDropdowns,
     initializeSmoothScrolling,
-    initializeCardAnimations
+    initializeCardAnimations,
+    applyTheme,
 };
