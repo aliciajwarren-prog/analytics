@@ -161,6 +161,7 @@
 .card--horizontal {
     flex-direction: row;
     align-items: stretch;
+    height: 160px;
 }
 
 .card-media--horizontal {
