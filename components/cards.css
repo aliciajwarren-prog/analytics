@@ -86,9 +86,9 @@
     color: var(--blue-600);
 }
 
-.card--no-media .card-media {
-    background: var(--surface-variant);
-    color: var(--on-surface-dim);
+/* Suppress media slots on all cards in a row when any card lacks an image */
+.card-grid--text-only .card-media {
+    display: none;
 }
 
 .card-media-label {

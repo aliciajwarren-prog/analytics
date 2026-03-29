@@ -39,11 +39,8 @@
                 <!-- Card Types -->
                 <section class="demo-section">
                     <h2 class="section-title">Card Types</h2>
-                    <div class="card-grid card-grid--auto">
+                    <div class="card-grid card-grid--auto card-grid--text-only">
                         <article class="card">
-                            <div class="card-media" role="img" aria-label="Featured book cover placeholder">
-                                <span class="card-media-label">Featured</span>
-                            </div>
                             <div class="card-content">
                                 <p class="card-eyebrow">Featured resource</p>
                                 <h3 class="card-title">The Modern Library Guide</h3>
@@ -63,10 +60,7 @@
                             </div>
                         </article>
 
-                        <article class="card card--no-media">
-                            <div class="card-media" role="img" aria-label="No image placeholder">
-                                <span class="card-media-label">No image</span>
-                            </div>
+                        <article class="card">
                             <div class="card-content">
                                 <p class="card-eyebrow">Resource list</p>
                                 <h3 class="card-title">Spring Reading Picks</h3>
@@ -94,9 +88,6 @@
                         </article>
 
                         <article class="card">
-                            <div class="card-media card-media--service" aria-hidden="true">
-                                <span class="card-media-label">Service</span>
-                            </div>
                             <div class="card-content">
                                 <p class="card-eyebrow">Library service</p>
                                 <h3 class="card-title">Research Consultations</h3>
@@ -125,11 +116,8 @@
                         <p class="layout-description">
                             Use auto-fit when content width varies. Cards resize while keeping a minimum width.
                         </p>
-                        <div class="card-grid card-grid--auto">
+                        <div class="card-grid card-grid--auto card-grid--text-only">
                             <article class="card card--compact">
-                                <div class="card-media" role="img" aria-label="Cover placeholder">
-                                    <span class="card-media-label">Cover</span>
-                                </div>
                                 <div class="card-content">
                                     <p class="card-eyebrow">Featured</p>
                                     <h3 class="card-title">Local History Digest</h3>
@@ -139,10 +127,7 @@
                                     </div>
                                 </div>
                             </article>
-                            <article class="card card--compact card--no-media">
-                                <div class="card-media" role="img" aria-label="No image placeholder">
-                                    <span class="card-media-label">No image</span>
-                                </div>
+                            <article class="card card--compact">
                                 <div class="card-content">
                                     <p class="card-eyebrow">List</p>
                                     <h3 class="card-title">Teacher Toolkits</h3>
@@ -153,9 +138,6 @@
                                 </div>
                             </article>
                             <article class="card card--compact">
-                                <div class="card-media card-media--service" aria-hidden="true">
-                                    <span class="card-media-label">Service</span>
-                                </div>
                                 <div class="card-content">
                                     <p class="card-eyebrow">Service</p>
                                     <h3 class="card-title">Equipment Loans</h3>
@@ -173,11 +155,8 @@
                         <p class="layout-description">
                             Use fixed columns to maintain a strict rhythm across pages or sections.
                         </p>
-                        <div class="card-grid card-grid--fixed">
+                        <div class="card-grid card-grid--fixed card-grid--text-only">
                             <article class="card card--compact">
-                                <div class="card-media" role="img" aria-label="Cover placeholder">
-                                    <span class="card-media-label">Cover</span>
-                                </div>
                                 <div class="card-content">
                                     <p class="card-eyebrow">Featured</p>
                                     <h3 class="card-title">Open Access Starter</h3>
@@ -187,10 +166,7 @@
                                     </div>
                                 </div>
                             </article>
-                            <article class="card card--compact card--no-media">
-                                <div class="card-media" role="img" aria-label="No image placeholder">
-                                    <span class="card-media-label">No image</span>
-                                </div>
+                            <article class="card card--compact">
                                 <div class="card-content">
                                     <p class="card-eyebrow">Service</p>
                                     <h3 class="card-title">Library Orientations</h3>
@@ -201,9 +177,6 @@
                                 </div>
                             </article>
                             <article class="card card--compact">
-                                <div class="card-media" role="img" aria-label="Cover placeholder">
-                                    <span class="card-media-label">Guide</span>
-                                </div>
                                 <div class="card-content">
                                     <p class="card-eyebrow">List</p>
                                     <h3 class="card-title">Research Help Hub</h3>
@@ -214,9 +187,6 @@
                                 </div>
                             </article>
                             <article class="card card--compact">
-                                <div class="card-media card-media--service" aria-hidden="true">
-                                    <span class="card-media-label">Service</span>
-                                </div>
                                 <div class="card-content">
                                     <p class="card-eyebrow">Service</p>
                                     <h3 class="card-title">Printing Support</h3>
@@ -247,10 +217,10 @@
                         <div class="guideline">
                             <h3 class="guideline-title">Media rules</h3>
                             <ul class="guideline-list">
-                                <li>Reserve the same media slot for all cards in a row.</li>
-                                <li>Keep aspect ratios consistent (16:9 or 4:3).</li>
-                                <li>Use a placeholder treatment when no image is available.</li>
-                                <li>Keep media optional; avoid removing the slot entirely.</li>
+                                <li>If any card in a row has no image, remove the media slot from all cards in that row.</li>
+                                <li>Keep aspect ratios consistent (16:9 or 4:3) across image rows.</li>
+                                <li>Use <code>card-grid--text-only</code> on the grid to suppress all media slots at once.</li>
+                                <li>Never mix image and no-image cards in the same row.</li>
                             </ul>
                         </div>
 
@@ -286,6 +256,11 @@
 
 .card-grid--fixed {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Add to any row where one or more cards lack an image */
+.card-grid--text-only .card-media {
+    display: none;
 }
 
 .card {
