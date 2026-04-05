@@ -160,19 +160,17 @@
 /* ─── Horizontal card variant ─── */
 .card--horizontal {
     flex-direction: row;
-    align-items: flex-start;
 }
 
-/* Image: fixed size, doesn't stretch to card height */
+/* Image fills the full card height — card height is driven by content */
 .card-media--horizontal {
     aspect-ratio: unset;
     width: 200px;
-    height: 180px;
     flex-shrink: 0;
     align-self: stretch;
 }
 
-/* Content: fills remaining width; overrides the vertical card min-height */
+/* Content fills remaining width; overrides vertical card min-height */
 .card--horizontal .card-content {
     flex: 1;
     min-width: 0;
