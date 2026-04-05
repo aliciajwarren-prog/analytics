@@ -170,11 +170,9 @@
     align-self: stretch;
 }
 
-/* Content fills remaining width; overrides vertical card min-height */
+/* Content fills remaining width */
 .card--horizontal .card-content {
-    flex: 1;
     min-width: 0;
-    min-height: 0;
 }
 
 /* Stack horizontals at narrow widths */
