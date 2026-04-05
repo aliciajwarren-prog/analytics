@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize copy buttons for code snippets
     initializeCodeSnippetCopy();
+
+    // Initialize card list favorite buttons
+    initializeCardFavorites();
 });
 
 function initializeDropdowns() {
@@ -202,6 +205,18 @@ function animateStateTransition(element, newState, duration = 300) {
             element.style.backgroundColor = 'var(--surface-bright)';
             break;
     }
+}
+
+// ─── Card list favorites ──────────────────────────────────────────────────────
+
+function initializeCardFavorites() {
+    document.querySelectorAll('.card-list-favorite').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const pressed = this.getAttribute('aria-pressed') === 'true';
+            this.setAttribute('aria-pressed', String(!pressed));
+            this.setAttribute('aria-label', pressed ? 'Add to favorites' : 'Remove from favorites');
+        });
+    });
 }
 
 // ─── Theme switcher ───────────────────────────────────────────────────────────

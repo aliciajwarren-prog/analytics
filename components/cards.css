@@ -271,9 +271,44 @@
     font-weight: 600;
 }
 
-.card-list-meta {
-    font-size: 12px;
-    color: var(--on-surface-variant);
+/* Favorite heart button */
+.card-list-favorite {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+/* Show on row hover */
+.card-list-item:hover .card-list-favorite {
+    opacity: 1;
+}
+
+/* Always show when favorited so state is never hidden */
+.card-list-favorite[aria-pressed="true"] {
+    opacity: 1;
+}
+
+.favorite-heart {
+    fill: none;
+    stroke: var(--gray-500);
+    stroke-width: 1.5;
+    transition: fill 0.15s ease, stroke 0.15s ease;
+}
+
+.card-list-item:hover .favorite-heart {
+    stroke: var(--gray-600);
+}
+
+.card-list-favorite[aria-pressed="true"] .favorite-heart {
+    fill: var(--primary-400);
+    stroke: var(--primary-400);
 }
 
 .card-actions {
