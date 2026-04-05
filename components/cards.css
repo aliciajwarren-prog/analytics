@@ -173,13 +173,8 @@
 
 /* Stack horizontals at narrow widths */
 @media (max-width: 640px) {
-    .card--horizontal {
-        flex-direction: column;
-    }
     .card-media--horizontal {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        align-self: auto;
+        display: none;
     }
 }
 
