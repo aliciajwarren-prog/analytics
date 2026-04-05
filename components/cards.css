@@ -160,15 +160,23 @@
 /* ─── Horizontal card variant ─── */
 .card--horizontal {
     flex-direction: row;
-    align-items: stretch;
-    height: 160px;
+    align-items: flex-start;
 }
 
+/* Image: fixed size, doesn't stretch to card height */
 .card-media--horizontal {
     aspect-ratio: unset;
     width: 200px;
+    height: 180px;
     flex-shrink: 0;
     align-self: stretch;
+}
+
+/* Content: fills remaining width; overrides the vertical card min-height */
+.card--horizontal .card-content {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
 }
 
 /* Stack horizontals at narrow widths */
