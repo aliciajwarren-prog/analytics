@@ -10,20 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="cards-examples" data-base-path="../">
     <div class="app">
         <header class="header">
-            <div class="container">
-                <a href="cards.html" class="logo">← Cards</a>
-                <nav class="nav">
-                    <a href="../index.html#components" class="nav-link">Components</a>
-                    <a href="../index.html#tokens" class="nav-link">Tokens</a>
-                    <a href="../index.html#guidelines" class="nav-link">Guidelines</a>
-                </nav>
+            <div class="header-inner">
+                <a href="../index.html" class="header-logo">LibLynx Design System</a>
             </div>
         </header>
 
-        <main class="component-page">
+        <div class="layout-body">
+        <!-- sidebar injected by script.js -->
+
+        <main class="main-content component-page" id="main-content">
             <div class="container">
 
                 <div class="component-header">
@@ -209,8 +207,10 @@
                 </div>
 
             </div>
-        </main>
-    </div>
+        </div><!-- /.container -->
+        </main><!-- /.main-content -->
+        </div><!-- /.layout-body -->
+    </div><!-- /.app -->
 
     <script src="../script.js"></script>
 </body>

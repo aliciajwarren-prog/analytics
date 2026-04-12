@@ -10,22 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="tokens" data-base-path="">
     <div class="app">
         <!-- Header -->
         <header class="header">
-            <div class="container">
-                <a href="index.html" class="logo">← LibLynx Design System</a>
-                <nav class="nav">
-                    <a href="index.html#components" class="nav-link">Components</a>
-                    <a href="#tokens" class="nav-link">Tokens</a>
-                    <a href="index.html#guidelines" class="nav-link">Guidelines</a>
-                </nav>
+            <div class="header-inner">
+                <a href="index.html" class="header-logo">LibLynx Design System</a>
             </div>
         </header>
 
-        <!-- Tokens Page -->
-        <main class="tokens-page">
+        <div class="layout-body">
+        <!-- sidebar injected by script.js -->
+
+        <main class="main-content tokens-page" id="main-content">
             <div class="container">
                 <!-- Page Header -->
                 <div class="page-header">
@@ -716,8 +713,9 @@
                     </div>
                 </section>
             </div>
-        </main>
-    </div>
+        </main><!-- /.main-content -->
+        </div><!-- /.layout-body -->
+    </div><!-- /.app -->
 
     <script src="script.js"></script>
     <script src="tokens.js"></script>

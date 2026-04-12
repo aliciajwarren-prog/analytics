@@ -1,8 +1,8 @@
 /* Input Component Specific Styles */
 
-/* Component Page Layout */
+/* Component Page Layout — padding handled by .main-content .container */
 .component-page {
-    padding: 40px 0 80px;
+    padding: 0;
 }
 
 .component-header {

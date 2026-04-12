@@ -9,29 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="home" data-base-path="">
     <div class="app">
         <!-- Header -->
         <header class="header">
-            <div class="container">
-                <h1 class="logo">LibLynx Design System</h1>
-                <nav class="nav">
-                    <a href="#components" class="nav-link">Components</a>
-                    <a href="#tokens" class="nav-link">Tokens</a>
-                    <a href="#guidelines" class="nav-link">Guidelines</a>
-                </nav>
+            <div class="header-inner">
+                <a href="index.html" class="header-logo">LibLynx Design System</a>
             </div>
         </header>
 
-        <!-- Hero Section -->
+        <div class="layout-body">
+        <!-- sidebar injected by script.js -->
+
+        <main class="main-content" id="main-content">
+        <div class="container">
+
+        <!-- Intro hero -->
         <section class="hero">
-            <div class="container">
-                <h2 class="hero-title">Build beautiful, consistent interfaces</h2>
-                <p class="hero-description">
-                    A comprehensive design system with reusable components, design tokens, and guidelines 
-                    to help you create exceptional user experiences.
-                </p>
-            </div>
+            <h1 class="hero-title">LibLynx Design System</h1>
+            <p class="hero-description">
+                A collection of reusable components, design tokens, and guidelines 
+                to help you build consistent, accessible library interfaces.
+            </p>
         </section>
 
         <!-- Components Section -->
@@ -142,7 +141,7 @@
         </section>
 
         <!-- Design Tokens Section -->
-        <section id="tokens" class="tokens-section">
+        <section id="tokens" class="tokens-section" style="margin-bottom: 0;">
             <div class="container">
                 <h2 class="section-title">Design Tokens</h2>
                 <div class="tokens-grid">
@@ -273,7 +272,10 @@
                 </div>
             </div>
         </section>
-    </div>
+        </div><!-- /.container -->
+        </main><!-- /.main-content -->
+        </div><!-- /.layout-body -->
+    </div><!-- /.app -->
 
     <script src="script.js"></script>
 </body>

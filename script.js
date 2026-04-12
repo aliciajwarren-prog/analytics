@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply saved theme before anything else renders
     initializeTheme();
 
+    // Inject sidebar navigation
+    initializeSidebar();
+
     // Inject theme switcher into the header
     initializeThemeSwitcher();
 
@@ -264,6 +267,74 @@ function initializeCardFavorites() {
     });
 }
 
+// ─── Sidebar navigation ───────────────────────────────────────────────────────
+
+function initializeSidebar() {
+    const layoutBody = document.querySelector('.layout-body');
+    if (!layoutBody) return;
+
+    const basePath = document.body.getAttribute('data-base-path') || '';
+    const currentPage = document.body.getAttribute('data-page') || '';
+
+    const sections = [
+        {
+            label: 'Get started',
+            items: [
+                { id: 'home', label: 'Introduction', href: `${basePath}index.html` },
+            ],
+        },
+        {
+            label: 'Foundations',
+            items: [
+                { id: 'tokens', label: 'Design Tokens', href: `${basePath}tokens.html` },
+            ],
+        },
+        {
+            label: 'Components',
+            items: [
+                { id: 'dropdown', label: 'Dropdown', href: `${basePath}components/dropdown.html` },
+                { id: 'input',    label: 'Input',    href: `${basePath}components/input.html` },
+                {
+                    id: 'cards', label: 'Cards', href: `${basePath}components/cards.html`,
+                    children: [
+                        { id: 'cards-examples', label: 'Examples', href: `${basePath}components/cards-examples.html` },
+                    ],
+                },
+            ],
+        },
+    ];
+
+    function isActive(id) { return id === currentPage; }
+
+    function buildItems(items) {
+        return items.map(item => {
+            const active = isActive(item.id) ? ' sidebar-link--active' : '';
+            let html = `<li><a href="${item.href}" class="sidebar-link${active}"${isActive(item.id) ? ' aria-current="page"' : ''}>${item.label}</a>`;
+            if (item.children) {
+                html += `<ul class="sidebar-nav">${item.children.map(child => {
+                    const childActive = isActive(child.id) ? ' sidebar-link--active' : '';
+                    return `<li><a href="${child.href}" class="sidebar-link sidebar-link--sub${childActive}"${isActive(child.id) ? ' aria-current="page"' : ''}>${child.label}</a></li>`;
+                }).join('')}</ul>`;
+            }
+            html += '</li>';
+            return html;
+        }).join('');
+    }
+
+    const sectionsHTML = sections.map(s =>
+        `<div class="sidebar-section">
+            <span class="sidebar-section-label">${s.label}</span>
+            <ul class="sidebar-nav">${buildItems(s.items)}</ul>
+        </div>`
+    ).join('');
+
+    const sidebar = document.createElement('nav');
+    sidebar.className = 'sidebar';
+    sidebar.setAttribute('aria-label', 'Design system navigation');
+    sidebar.innerHTML = sectionsHTML;
+    layoutBody.insertBefore(sidebar, layoutBody.firstChild);
+}
+
 // ─── Theme switcher ───────────────────────────────────────────────────────────
 
 const THEME_KEY = 'ds-theme';
@@ -289,19 +360,8 @@ function applyTheme(theme) {
 }
 
 function initializeThemeSwitcher() {
-    const container = document.querySelector('.header .container');
-    if (!container) return;
-
-    // Wrap existing nav + new switcher together on the right
-    const nav = container.querySelector('.nav');
-    const headerEnd = document.createElement('div');
-    headerEnd.className = 'header-end';
-    if (nav) {
-        container.insertBefore(headerEnd, nav);
-        headerEnd.appendChild(nav);
-    } else {
-        container.appendChild(headerEnd);
-    }
+    const headerInner = document.querySelector('.header-inner');
+    if (!headerInner) return;
 
     // Build switcher
     const switcher = document.createElement('div');
@@ -316,7 +376,7 @@ function initializeThemeSwitcher() {
             </optgroup>
         </select>
     `;
-    headerEnd.appendChild(switcher);
+    headerInner.appendChild(switcher);
 
     // Restore saved selection
     const select = switcher.querySelector('#theme-select');
