@@ -180,6 +180,15 @@
     background: var(--surface-bright);
 }
 
+.input-error-msg {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
 /* States Section */
 .states-section {
     margin-bottom: 64px;

@@ -40,28 +40,38 @@
                 <section class="demo-section">
                     <h2 class="section-title">Interactive Demo</h2>
                     <div class="demo-container">
-                        <div class="demo-controls">
-                            <button class="demo-button active" data-state="default">Default</button>
-                            <button class="demo-button" data-state="hover">Hover</button>
-                            <button class="demo-button" data-state="focus">Focus</button>
-                            <button class="demo-button" data-state="disabled">Disabled</button>
-                            <button class="demo-button" data-state="error">Error</button>
+                        <div class="demo-controls" role="group" aria-label="Dropdown state controls">
+                            <button class="demo-button active" type="button" data-state="default">Default</button>
+                            <button class="demo-button" type="button" data-state="hover">Hover</button>
+                            <button class="demo-button" type="button" data-state="focus">Focus</button>
+                            <button class="demo-button" type="button" data-state="disabled">Disabled</button>
+                            <button class="demo-button" type="button" data-state="error">Error</button>
                         </div>
                         <div class="demo-preview">
                             <div class="dropdown-demo-container">
                                 <div class="dropdown-wrapper">
-                                    <div class="dropdown" id="interactive-dropdown" tabindex="0">
-                                        <span class="dropdown-text">Select database</span>
-                                        <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <span id="interactive-dropdown-label" class="visually-hidden">Database</span>
+                                    <div
+                                        class="dropdown"
+                                        id="interactive-dropdown"
+                                        role="button"
+                                        tabindex="0"
+                                        aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                        aria-controls="interactive-dropdown-menu"
+                                        aria-labelledby="interactive-dropdown-label interactive-dropdown-text"
+                                    >
+                                        <span class="dropdown-text" id="interactive-dropdown-text">Select database</span>
+                                        <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                             <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </div>
-                                    <div class="dropdown-menu" id="interactive-dropdown-menu">
-                                        <div class="dropdown-option" data-value="ebscohost">EBSCOHost</div>
-                                        <div class="dropdown-option" data-value="proquest">ProQuest</div>
-                                        <div class="dropdown-option" data-value="jstor">JSTOR</div>
-                                        <div class="dropdown-option" data-value="pubmed">PubMed</div>
-                                        <div class="dropdown-option" data-value="academic-search">Academic Search</div>
+                                    <div class="dropdown-menu" id="interactive-dropdown-menu" role="listbox" aria-labelledby="interactive-dropdown-label">
+                                        <div class="dropdown-option" role="option" aria-selected="false" tabindex="-1" id="opt-ebscohost" data-value="ebscohost">EBSCOHost</div>
+                                        <div class="dropdown-option" role="option" aria-selected="false" tabindex="-1" id="opt-proquest" data-value="proquest">ProQuest</div>
+                                        <div class="dropdown-option" role="option" aria-selected="false" tabindex="-1" id="opt-jstor" data-value="jstor">JSTOR</div>
+                                        <div class="dropdown-option" role="option" aria-selected="false" tabindex="-1" id="opt-pubmed" data-value="pubmed">PubMed</div>
+                                        <div class="dropdown-option" role="option" aria-selected="false" tabindex="-1" id="opt-academic-search" data-value="academic-search">Academic Search</div>
                                     </div>
                                 </div>
                             </div>
@@ -75,10 +85,10 @@
                     <div class="states-grid">
                         <div class="state-example">
                             <h3 class="state-title">Default</h3>
-                            <div class="state-preview">
-                                <div class="dropdown state-default">
+                            <div class="state-preview" aria-hidden="true">
+                                <div class="dropdown state-default" tabindex="-1">
                                     <span class="dropdown-text">Select database</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                         <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
@@ -88,10 +98,10 @@
 
                         <div class="state-example">
                             <h3 class="state-title">Hover</h3>
-                            <div class="state-preview">
-                                <div class="dropdown state-hover">
+                            <div class="state-preview" aria-hidden="true">
+                                <div class="dropdown state-hover" tabindex="-1">
                                     <span class="dropdown-text">Select database</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                         <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
@@ -101,10 +111,10 @@
 
                         <div class="state-example">
                             <h3 class="state-title">Focus</h3>
-                            <div class="state-preview">
-                                <div class="dropdown state-focus">
+                            <div class="state-preview" aria-hidden="true">
+                                <div class="dropdown state-focus" tabindex="-1">
                                     <span class="dropdown-text">Select database</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                         <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
@@ -114,10 +124,10 @@
 
                         <div class="state-example">
                             <h3 class="state-title">Disabled</h3>
-                            <div class="state-preview">
-                                <div class="dropdown state-disabled">
+                            <div class="state-preview" aria-hidden="true">
+                                <div class="dropdown state-disabled" tabindex="-1" aria-disabled="true">
                                     <span class="dropdown-text">Select database</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                         <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
@@ -127,10 +137,10 @@
 
                         <div class="state-example">
                             <h3 class="state-title">Error</h3>
-                            <div class="state-preview">
-                                <div class="dropdown state-error">
+                            <div class="state-preview" aria-hidden="true">
+                                <div class="dropdown state-error" tabindex="-1" aria-invalid="true">
                                     <span class="dropdown-text">Select database</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                         <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
@@ -146,10 +156,10 @@
                     <div class="variants-grid">
                         <div class="variant-example">
                             <h3 class="variant-title">Standalone</h3>
-                            <div class="variant-preview">
-                                <div class="dropdown">
+                            <div class="variant-preview" aria-hidden="true">
+                                <div class="dropdown" tabindex="-1">
                                     <span class="dropdown-text">Select database</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                         <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
@@ -159,10 +169,10 @@
 
                         <div class="variant-example">
                             <h3 class="variant-title">With selected value</h3>
-                            <div class="variant-preview">
-                                <div class="dropdown">
+                            <div class="variant-preview" aria-hidden="true">
+                                <div class="dropdown" tabindex="-1">
                                     <span class="dropdown-text">EBSCOHost</span>
-                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                         <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
@@ -174,12 +184,13 @@
                             <h3 class="variant-title">Input group</h3>
                             <div class="variant-preview">
                                 <div class="input-button-group">
+                                    <label for="input-group-database" class="visually-hidden">Selected database</label>
                                     <div class="input">
-                                        <input type="text" class="input-field" value="EBSCOHost" readonly>
+                                        <input type="text" id="input-group-database" class="input-field" value="EBSCOHost" readonly aria-readonly="true">
                                     </div>
-                                    <button type="button" class="animation-button input-button-group__btn">
+                                    <button type="button" class="animation-button input-button-group__btn" aria-label="Category: Books. Change category">
                                         Books
-                                        <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                        <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                             <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </button>
@@ -370,16 +381,16 @@
                 <section class="animation-section">
                     <h2 class="section-title">Animations</h2>
                     <div class="animation-demo">
-                        <div class="animation-controls">
-                            <button class="animation-button" id="animate-hover">Animate Hover</button>
-                            <button class="animation-button" id="animate-focus">Animate Focus</button>
-                            <button class="animation-button" id="animate-error">Animate Error</button>
-                            <button class="animation-button" id="animate-reset">Reset</button>
+                        <div class="animation-controls" role="group" aria-label="Animation controls">
+                            <button class="animation-button" type="button" id="animate-hover">Animate Hover</button>
+                            <button class="animation-button" type="button" id="animate-focus">Animate Focus</button>
+                            <button class="animation-button" type="button" id="animate-error">Animate Error</button>
+                            <button class="animation-button" type="button" id="animate-reset">Reset</button>
                         </div>
-                        <div class="animation-preview">
-                            <div class="dropdown" id="animation-dropdown">
+                        <div class="animation-preview" aria-hidden="true">
+                            <div class="dropdown" id="animation-dropdown" tabindex="-1">
                                 <span class="dropdown-text">Select database</span>
-                                <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                                     <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>

@@ -40,17 +40,18 @@
                 <section class="demo-section">
                     <h2 class="section-title">Interactive Demo</h2>
                     <div class="demo-container">
-                        <div class="demo-controls">
-                            <button class="demo-button" data-state="default">Default</button>
-                            <button class="demo-button" data-state="focus">Focus</button>
-                            <button class="demo-button" data-state="disabled">Disabled</button>
-                            <button class="demo-button" data-state="filled">Filled</button>
-                            <button class="demo-button" data-state="error">Error</button>
+                        <div class="demo-controls" role="group" aria-label="Input state controls">
+                            <button class="demo-button" type="button" data-state="default">Default</button>
+                            <button class="demo-button" type="button" data-state="focus">Focus</button>
+                            <button class="demo-button" type="button" data-state="disabled">Disabled</button>
+                            <button class="demo-button" type="button" data-state="filled">Filled</button>
+                            <button class="demo-button" type="button" data-state="error">Error</button>
                         </div>
                         <div class="demo-preview">
                             <div class="input-demo-container">
+                                <label for="interactive-input-field" class="visually-hidden">Search query</label>
                                 <div class="input" id="interactive-input">
-                                    <input type="text" placeholder="Default" class="input-field">
+                                    <input type="text" id="interactive-input-field" placeholder="Enter search term" class="input-field">
                                 </div>
                             </div>
                         </div>
@@ -64,8 +65,9 @@
                         <div class="state-example">
                             <h3 class="state-title">Default</h3>
                             <div class="state-preview">
+                                <label for="state-default-input" class="visually-hidden">Search query (default)</label>
                                 <div class="input state-default">
-                                    <input type="text" placeholder="Default" class="input-field">
+                                    <input type="text" id="state-default-input" placeholder="Enter search term" class="input-field">
                                 </div>
                             </div>
                             <p class="state-description">Default state with light border and placeholder text.</p>
@@ -74,8 +76,9 @@
                         <div class="state-example">
                             <h3 class="state-title">Focus</h3>
                             <div class="state-preview">
+                                <label for="state-focus-input" class="visually-hidden">Search query (focus)</label>
                                 <div class="input state-focus">
-                                    <input type="text" placeholder="Focus" class="input-field">
+                                    <input type="text" id="state-focus-input" placeholder="Enter search term" class="input-field">
                                 </div>
                             </div>
                             <p class="state-description">Focus state with blue border and focus ring.</p>
@@ -84,8 +87,9 @@
                         <div class="state-example">
                             <h3 class="state-title">Disabled</h3>
                             <div class="state-preview">
+                                <label for="state-disabled-input" class="visually-hidden">Search query (disabled)</label>
                                 <div class="input state-disabled">
-                                    <input type="text" placeholder="Disabled" class="input-field" disabled>
+                                    <input type="text" id="state-disabled-input" placeholder="Not available" class="input-field" disabled>
                                 </div>
                             </div>
                             <p class="state-description">Disabled state with muted colors and no interaction.</p>
@@ -94,8 +98,9 @@
                         <div class="state-example">
                             <h3 class="state-title">Filled</h3>
                             <div class="state-preview">
+                                <label for="state-filled-input" class="visually-hidden">Search query (filled)</label>
                                 <div class="input state-filled">
-                                    <input type="text" value="Filled" class="input-field">
+                                    <input type="text" id="state-filled-input" value="Research databases" class="input-field">
                                 </div>
                             </div>
                             <p class="state-description">Filled state with user-entered content.</p>
@@ -104,9 +109,18 @@
                         <div class="state-example">
                             <h3 class="state-title">Error</h3>
                             <div class="state-preview">
+                                <label for="state-error-input" class="visually-hidden">Search query (error)</label>
                                 <div class="input state-error">
-                                    <input type="text" placeholder="Error" class="input-field">
+                                    <input
+                                        type="text"
+                                        id="state-error-input"
+                                        placeholder="Enter search term"
+                                        class="input-field"
+                                        aria-invalid="true"
+                                        aria-describedby="state-error-msg"
+                                    >
                                 </div>
+                                <p class="input-error-msg" id="state-error-msg" role="alert">Please enter a valid search term.</p>
                             </div>
                             <p class="state-description">Error state with red border indicating validation error.</p>
                         </div>
@@ -120,8 +134,9 @@
                         <div class="size-example">
                             <h3 class="size-label">Small <span class="size-px">36px</span></h3>
                             <div class="size-preview">
+                                <label for="size-sm-input" class="visually-hidden">Search query (small)</label>
                                 <div class="input input--sm">
-                                    <input type="text" placeholder="Small input" class="input-field">
+                                    <input type="text" id="size-sm-input" placeholder="Small input" class="input-field">
                                 </div>
                             </div>
                             <p class="state-description">Use for dense layouts, inline filters, or secondary search fields.</p>
@@ -130,8 +145,9 @@
                         <div class="size-example">
                             <h3 class="size-label">Medium <span class="size-px">40px</span> <span class="size-default">Default</span></h3>
                             <div class="size-preview">
+                                <label for="size-md-input" class="visually-hidden">Search query (medium)</label>
                                 <div class="input">
-                                    <input type="text" placeholder="Medium input" class="input-field">
+                                    <input type="text" id="size-md-input" placeholder="Medium input" class="input-field">
                                 </div>
                             </div>
                             <p class="state-description">The standard size for most forms and search bars.</p>
@@ -140,8 +156,9 @@
                         <div class="size-example">
                             <h3 class="size-label">Large <span class="size-px">44px</span></h3>
                             <div class="size-preview">
+                                <label for="size-lg-input" class="visually-hidden">Search query (large)</label>
                                 <div class="input input--lg">
-                                    <input type="text" placeholder="Large input" class="input-field">
+                                    <input type="text" id="size-lg-input" placeholder="Large input" class="input-field">
                                 </div>
                             </div>
                             <p class="state-description">Use for primary search bars or when touch targets need to be larger.</p>
@@ -156,8 +173,9 @@
                         <div class="variant-example">
                             <h3 class="variant-title">Rectangular Style</h3>
                             <div class="variant-preview">
+                                <label for="variant-rect-input" class="visually-hidden">Search query (rectangular style)</label>
                                 <div class="input rectangular">
-                                    <input type="text" placeholder="Rectangular" class="input-field">
+                                    <input type="text" id="variant-rect-input" placeholder="Rectangular" class="input-field">
                                 </div>
                             </div>
                             <p class="variant-description">Sharp, rectangular corners for a more formal appearance.</p>
@@ -166,8 +184,9 @@
                         <div class="variant-example">
                             <h3 class="variant-title">Rounded Style</h3>
                             <div class="variant-preview">
+                                <label for="variant-rounded-input" class="visually-hidden">Search query (rounded style)</label>
                                 <div class="input rounded">
-                                    <input type="text" placeholder="Rounded" class="input-field">
+                                    <input type="text" id="variant-rounded-input" placeholder="Rounded" class="input-field">
                                 </div>
                             </div>
                             <p class="variant-description">Rounded corners for a softer, more modern appearance.</p>

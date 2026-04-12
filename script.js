@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inject theme switcher into the header
     initializeThemeSwitcher();
 
+    // Inject a live region for screen reader announcements
+    initializeLiveRegion();
+
     // Initialize dropdown interactions
     initializeDropdowns();
     
@@ -20,35 +23,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize card list favorite buttons
     initializeCardFavorites();
+
+    // Prevent demo href="#" links from scrolling to top
+    initializeDemoLinkPrevention();
 });
 
 function initializeDropdowns() {
     const dropdowns = document.querySelectorAll('.dropdown');
     
     dropdowns.forEach(dropdown => {
+        const isDisabled = () =>
+            dropdown.classList.contains('state-disabled') ||
+            dropdown.getAttribute('aria-disabled') === 'true';
+
         // Add hover effects
         dropdown.addEventListener('mouseenter', function() {
-            if (!this.disabled) {
+            if (!isDisabled()) {
                 this.style.borderColor = 'var(--primary-400)';
             }
         });
         
         dropdown.addEventListener('mouseleave', function() {
-            if (!this.disabled && !this.classList.contains('error')) {
+            if (!isDisabled() && !this.classList.contains('error')) {
                 this.style.borderColor = 'var(--outline-variant)';
             }
         });
         
         // Add focus effects
         dropdown.addEventListener('focus', function() {
-            if (!this.disabled) {
+            if (!isDisabled()) {
                 this.style.borderColor = 'var(--primary-400)';
                 this.style.boxShadow = '0 0 0 3px rgba(247, 143, 37, 0.1)';
             }
         });
         
         dropdown.addEventListener('blur', function() {
-            if (!this.disabled && !this.classList.contains('error')) {
+            if (!isDisabled() && !this.classList.contains('error')) {
                 this.style.borderColor = 'var(--outline-variant)';
                 this.style.boxShadow = 'none';
             }
@@ -56,13 +66,13 @@ function initializeDropdowns() {
         
         // Add click animation
         dropdown.addEventListener('mousedown', function() {
-            if (!this.disabled) {
+            if (!isDisabled()) {
                 this.style.transform = 'scale(0.98)';
             }
         });
         
         dropdown.addEventListener('mouseup', function() {
-            if (!this.disabled) {
+            if (!isDisabled()) {
                 this.style.transform = 'scale(1)';
             }
         });
@@ -138,10 +148,29 @@ function initializeCodeSnippetCopy() {
     });
 }
 
+function initializeLiveRegion() {
+    const region = document.createElement('div');
+    region.id = 'ds-live-region';
+    region.setAttribute('role', 'status');
+    region.setAttribute('aria-live', 'polite');
+    region.setAttribute('aria-atomic', 'true');
+    region.className = 'visually-hidden';
+    document.body.appendChild(region);
+}
+
+function announceToScreenReader(message) {
+    const region = document.getElementById('ds-live-region');
+    if (!region) return;
+    region.textContent = '';
+    // Small delay ensures the change is registered by screen readers
+    setTimeout(() => { region.textContent = message; }, 50);
+}
+
 function showCopiedState(button) {
     const originalText = button.textContent;
     button.textContent = 'Copied';
     button.classList.add('copied');
+    announceToScreenReader('CSS copied to clipboard');
 
     setTimeout(() => {
         button.textContent = originalText;
@@ -163,11 +192,13 @@ function fallbackCopyText(text, button) {
         showCopiedState(button);
     } catch (error) {
         button.textContent = 'Copy failed';
+        announceToScreenReader('Copy failed. Please try again.');
         setTimeout(() => {
             button.textContent = 'Copy CSS';
         }, 1500);
     } finally {
         document.body.removeChild(tempTextArea);
+        button.focus();
     }
 }
 
@@ -211,10 +242,24 @@ function animateStateTransition(element, newState, duration = 300) {
 
 function initializeCardFavorites() {
     document.querySelectorAll('.card-list-favorite').forEach(btn => {
+        // Derive resource name from the sibling .card-list-title in the same list item
+        const listItem = btn.closest('.card-list-item');
+        const titleEl = listItem ? listItem.querySelector('.card-list-title') : null;
+        const resourceName = titleEl ? titleEl.textContent.trim() : '';
+
+        // Set initial label if not already set with resource name
+        if (resourceName && btn.getAttribute('aria-label') === 'Add to favorites') {
+            btn.setAttribute('aria-label', `Add ${resourceName} to favorites`);
+        }
+
         btn.addEventListener('click', function () {
             const pressed = this.getAttribute('aria-pressed') === 'true';
+            const name = resourceName || 'item';
             this.setAttribute('aria-pressed', String(!pressed));
-            this.setAttribute('aria-label', pressed ? 'Add to favorites' : 'Remove from favorites');
+            this.setAttribute('aria-label', pressed
+                ? `Add ${name} to favorites`
+                : `Remove ${name} from favorites`
+            );
         });
     });
 }
@@ -280,6 +325,18 @@ function initializeThemeSwitcher() {
 
     select.addEventListener('change', function () {
         applyTheme(this.value);
+    });
+}
+
+// ─── Demo link prevention ─────────────────────────────────────────────────────
+
+function initializeDemoLinkPrevention() {
+    // Prevent href="#" demo links (inside card-actions, card content, etc.)
+    // from scrolling to the top of the page, which is disorienting for all users.
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+        });
     });
 }
 

@@ -113,6 +113,20 @@ function applyDropdownState(dropdown, state) {
 
     dropdown.classList.add(`state-${state}`);
 
+    // Update ARIA attributes based on state
+    if (state === 'disabled') {
+        dropdown.setAttribute('aria-disabled', 'true');
+        dropdown.setAttribute('tabindex', '-1');
+    } else {
+        dropdown.removeAttribute('aria-disabled');
+        dropdown.setAttribute('tabindex', '0');
+    }
+    if (state === 'error') {
+        dropdown.setAttribute('aria-invalid', 'true');
+    } else {
+        dropdown.removeAttribute('aria-invalid');
+    }
+
     switch(state) {
         case 'default':
             dropdown.style.borderColor = 'var(--outline-variant)';
@@ -171,7 +185,7 @@ function initializeDropdownFunctionality(dropdown, menu) {
 
     dropdown.addEventListener('click', function(e) {
         e.stopPropagation();
-        if (!this.classList.contains('state-disabled')) {
+        if (!this.classList.contains('state-disabled') && this.getAttribute('aria-disabled') !== 'true') {
             toggleDropdown();
         }
     });
@@ -183,18 +197,32 @@ function initializeDropdownFunctionality(dropdown, menu) {
             selectOption(this);
         });
         
-        // Add keyboard navigation
+        // Keyboard navigation within options
         option.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 selectOption(this);
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                navigateOptions('down');
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                navigateOptions('up');
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                options[0].focus();
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                options[options.length - 1].focus();
+            } else if (e.key === 'Escape' || e.key === 'Tab') {
+                closeDropdown(true);
             }
         });
     });
     
     document.addEventListener('click', function(e) {
         if (!dropdown.contains(e.target) && !menu.contains(e.target)) {
-            closeDropdown();
+            closeDropdown(false);
         }
     });
 
@@ -203,7 +231,7 @@ function initializeDropdownFunctionality(dropdown, menu) {
             e.preventDefault();
             toggleDropdown();
         } else if (e.key === 'Escape') {
-            closeDropdown();
+            closeDropdown(true);
         } else if (e.key === 'ArrowDown') {
             e.preventDefault();
             if (!isOpen) {
@@ -213,51 +241,66 @@ function initializeDropdownFunctionality(dropdown, menu) {
             }
         } else if (e.key === 'ArrowUp') {
             e.preventDefault();
-            if (isOpen) {
+            if (!isOpen) {
+                openDropdown('last');
+            } else {
                 navigateOptions('up');
             }
+        } else if (e.key === 'Home' && isOpen) {
+            e.preventDefault();
+            options[0].focus();
+        } else if (e.key === 'End' && isOpen) {
+            e.preventDefault();
+            options[options.length - 1].focus();
         }
     });
     
     function toggleDropdown() {
         if (isOpen) {
-            closeDropdown();
+            closeDropdown(true);
         } else {
             openDropdown();
         }
     }
     
-    function openDropdown() {
-        if (dropdown.classList.contains('state-disabled')) return;
+    function openDropdown(focusTarget) {
+        if (dropdown.classList.contains('state-disabled') || dropdown.getAttribute('aria-disabled') === 'true') return;
         isOpen = true;
         menu.classList.add('open');
         chevron.style.transform = 'rotate(180deg)';
         dropdown.style.borderColor = 'var(--primary-400)';
         dropdown.style.boxShadow = '0 0 0 3px rgba(247, 143, 37, 0.1)';
-        const firstOption = options[0];
-        if (firstOption) firstOption.focus();
+        dropdown.setAttribute('aria-expanded', 'true');
+        const target = focusTarget === 'last' ? options[options.length - 1] : options[0];
+        if (target) target.focus();
     }
 
-    function closeDropdown() {
+    function closeDropdown(returnFocus) {
         isOpen = false;
         menu.classList.remove('open');
         chevron.style.transform = 'rotate(0deg)';
+        dropdown.setAttribute('aria-expanded', 'false');
         const activeBtn = document.querySelector('.demo-section .demo-button.active');
         const state = activeBtn ? activeBtn.getAttribute('data-state') : 'default';
         applyDropdownState(dropdown, state);
+        if (returnFocus) dropdown.focus();
     }
 
     function selectOption(option) {
         const value = option.getAttribute('data-value');
         const text = option.textContent.trim();
-        options.forEach(opt => opt.classList.remove('selected'));
+        options.forEach(opt => {
+            opt.classList.remove('selected');
+            opt.setAttribute('aria-selected', 'false');
+        });
         option.classList.add('selected');
+        option.setAttribute('aria-selected', 'true');
         if (dropdownText) {
             dropdownText.textContent = text;
             dropdownText.style.color = 'var(--on-surface)';
         }
         selectedValue = value;
-        closeDropdown();
+        closeDropdown(true);
         dropdown.dispatchEvent(new CustomEvent('change', { detail: { value, text } }));
     }
     
