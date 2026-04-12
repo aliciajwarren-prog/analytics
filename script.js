@@ -106,7 +106,7 @@ function initializeSmoothScrolling() {
 }
 
 function initializeCardAnimations() {
-    const componentCards = document.querySelectorAll('.component-card');
+    const componentCards = document.querySelectorAll('.home-tile, .home-found-tile');
     
     // Add intersection observer for scroll animations
     const observer = new IntersectionObserver((entries) => {

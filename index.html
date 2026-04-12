@@ -24,254 +24,133 @@
         <main class="main-content" id="main-content">
         <div class="container">
 
-        <!-- Intro hero -->
-        <section class="hero">
-            <h1 class="hero-title">LibLynx Design System</h1>
-            <p class="hero-description">
-                A collection of reusable components, design tokens, and guidelines 
-                to help you build consistent, accessible library interfaces.
-            </p>
-        </section>
+            <!-- Hero -->
+            <section class="home-hero" aria-labelledby="home-hero-title">
+                <div class="home-hero-content">
+                    <p class="home-hero-eyebrow">LibLynx Design System</p>
+                    <h1 class="home-hero-title" id="home-hero-title">Build consistent, accessible interfaces</h1>
+                    <p class="home-hero-desc">
+                        Reusable components, design tokens, and guidelines for building
+                        polished library interfaces — from a single shared foundation.
+                    </p>
+                </div>
+                <div class="home-hero-visual" aria-hidden="true">
+                    <div class="home-hero-orbs">
+                        <span class="home-orb home-orb--1"></span>
+                        <span class="home-orb home-orb--2"></span>
+                        <span class="home-orb home-orb--3"></span>
+                        <span class="home-orb home-orb--4"></span>
+                        <span class="home-orb home-orb--5"></span>
+                        <span class="home-orb home-orb--6"></span>
+                    </div>
+                </div>
+            </section>
 
-        <!-- Components Section -->
-        <section id="components" class="components-section">
-            <div class="container">
-                <h2 class="section-title">Components</h2>
-                <div class="components-grid">
-                    <!-- Dropdown Component Card -->
-                    <div class="component-card">
-                        <div class="component-preview">
-                            <div class="dropdown-demo">
-                                <div class="dropdown-container">
-                                    <div class="dropdown" data-state="default">
-                                        <span class="dropdown-text">Select database</span>
-                                        <svg class="dropdown-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+            <!-- Components -->
+            <section class="home-section" aria-labelledby="section-components">
+                <div class="home-section-header">
+                    <h2 class="home-section-title" id="section-components">Components</h2>
+                    <span class="home-section-meta">3 components</span>
+                </div>
+                <div class="home-tile-grid">
+
+                    <!-- Dropdown -->
+                    <a href="components/dropdown.html" class="home-tile" aria-label="Dropdown component">
+                        <div class="home-tile-preview home-tile-preview--dropdown" aria-hidden="true">
+                            <div class="tile-preview-scene">
+                                <div class="tile-dropdown">
+                                    <span class="tile-dropdown-text">EBSCOHost</span>
+                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <div class="tile-dropdown-menu">
+                                    <div class="tile-dropdown-opt tile-dropdown-opt--selected">EBSCOHost</div>
+                                    <div class="tile-dropdown-opt">ProQuest</div>
+                                    <div class="tile-dropdown-opt">JSTOR</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home-tile-body">
+                            <h3 class="home-tile-name">Dropdown</h3>
+                            <p class="home-tile-desc">Select from a list with full keyboard and ARIA support.</p>
+                        </div>
+                    </a>
+
+                    <!-- Input -->
+                    <a href="components/input.html" class="home-tile" aria-label="Input component">
+                        <div class="home-tile-preview home-tile-preview--input" aria-hidden="true">
+                            <div class="tile-preview-scene">
+                                <div class="tile-input-group">
+                                    <div class="tile-input tile-input--default">
+                                        <span class="tile-input-placeholder">Default</span>
+                                    </div>
+                                    <div class="tile-input tile-input--focus">
+                                        <span class="tile-input-value">Research databases</span>
+                                    </div>
+                                    <div class="tile-input tile-input--error">
+                                        <span class="tile-input-placeholder">Error state</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="component-info">
-                            <h3 class="component-name">Dropdown</h3>
-                            <p class="component-description">
-                                A versatile dropdown component with multiple states and configurations.
-                            </p>
-                            <div class="component-states">
-                                <span class="state-tag">Default</span>
-                                <span class="state-tag">Hover</span>
-                                <span class="state-tag">Focus</span>
-                                <span class="state-tag">Disabled</span>
-                                <span class="state-tag">Error</span>
-                            </div>
-                            <a href="components/dropdown.html" class="component-link">View Component →</a>
+                        <div class="home-tile-body">
+                            <h3 class="home-tile-name">Input</h3>
+                            <p class="home-tile-desc">Text entry with sizes, states, and validation built in.</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Input Component Card -->
-                    <div class="component-card">
-                        <div class="component-preview">
-                            <div class="input-demo">
-                                <div class="input-container">
-                                    <div class="input">
-                                        <input type="text" placeholder="Enter text" class="input-field">
+                    <!-- Cards -->
+                    <a href="components/cards.html" class="home-tile" aria-label="Cards component">
+                        <div class="home-tile-preview home-tile-preview--cards" aria-hidden="true">
+                            <div class="tile-preview-scene">
+                                <div class="tile-card">
+                                    <div class="tile-card-img"></div>
+                                    <div class="tile-card-body">
+                                        <div class="tile-card-eyebrow"></div>
+                                        <div class="tile-card-title"></div>
+                                        <div class="tile-card-desc"></div>
+                                        <div class="tile-card-actions">
+                                            <div class="tile-card-btn tile-card-btn--link"></div>
+                                            <div class="tile-card-btn tile-card-btn--solid"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="component-info">
-                            <h3 class="component-name">Input</h3>
-                            <p class="component-description">
-                                Text input components with multiple states, styles, and dropdown variations.
-                            </p>
-                            <div class="component-states">
-                                <span class="state-tag">Default</span>
-                                <span class="state-tag">Focus</span>
-                                <span class="state-tag">Disabled</span>
-                                <span class="state-tag">Error</span>
-                                <span class="state-tag">Filled</span>
-                            </div>
-                            <a href="components/input.html" class="component-link">View Component →</a>
+                        <div class="home-tile-body">
+                            <h3 class="home-tile-name">Cards</h3>
+                            <p class="home-tile-desc">Flexible layouts for resources, lists, and services.</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- Cards Component Card -->
-                    <div class="component-card">
-                        <div class="component-preview">
-                            <div class="placeholder-content">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="5" width="18" height="14" rx="2"/>
-                                    <path d="M7 9h10"/>
-                                    <path d="M7 13h6"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="component-info">
-                            <h3 class="component-name">Cards</h3>
-                            <p class="component-description">
-                                Flexible card layouts for featured resources, lists, and services.
-                            </p>
-                            <div class="component-states">
-                                <span class="state-tag">Draft</span>
-                                <span class="state-tag">Featured</span>
-                                <span class="state-tag">List</span>
-                                <span class="state-tag">Service</span>
-                            </div>
-                            <a href="components/cards.html" class="component-link">View Component →</a>
-                        </div>
-                    </div>
-
-                    <!-- Placeholder for more components -->
-                    <div class="component-card coming-soon">
-                        <div class="component-preview">
-                            <div class="placeholder-content">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                    <path d="M9 9h6v6H9z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="component-info">
-                            <h3 class="component-name">More Components</h3>
-                            <p class="component-description">Additional components coming soon...</p>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Design Tokens Section -->
-        <section id="tokens" class="tokens-section" style="margin-bottom: 0;">
-            <div class="container">
-                <h2 class="section-title">Design Tokens</h2>
-                <div class="tokens-grid">
-                    <div class="token-category">
-                        <h3 class="token-category-title">Primary Colors</h3>
-                        <div class="color-tokens">
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #F78F25;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Primary-400</span>
-                                    <span class="token-value">#F78F25</span>
-                                </div>
-                            </div>
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #FEEFE1;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Primary-100</span>
-                                    <span class="token-value">#FEEFE1</span>
-                                </div>
-                            </div>
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #2A1B0E;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Primary-700</span>
-                                    <span class="token-value">#2A1B0E</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="token-category">
-                        <h3 class="token-category-title">Secondary Colors</h3>
-                        <div class="color-tokens">
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #D8226C;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Secondary-400</span>
-                                    <span class="token-value">#D8226C</span>
-                                </div>
-                            </div>
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #FDDDE4;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Secondary-100</span>
-                                    <span class="token-value">#FDDDE4</span>
-                                </div>
-                            </div>
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #2A0210;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Secondary-700</span>
-                                    <span class="token-value">#2A0210</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Foundations -->
+            <section class="home-section" aria-labelledby="section-foundations">
+                <div class="home-section-header">
+                    <h2 class="home-section-title" id="section-foundations">Foundations</h2>
+                </div>
+                <div class="home-found-grid">
 
-                    <div class="token-category">
-                        <h3 class="token-category-title">Semantic Colors</h3>
-                        <div class="color-tokens">
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #167533;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Success</span>
-                                    <span class="token-value">#167533</span>
-                                </div>
-                            </div>
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #B41C2B;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Error</span>
-                                    <span class="token-value">#B41C2B</span>
-                                </div>
-                            </div>
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #EDC232;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Warning</span>
-                                    <span class="token-value">#EDC232</span>
-                                </div>
-                            </div>
-                            <div class="color-token">
-                                <div class="color-swatch" style="background-color: #3267B5;"></div>
-                                <div class="token-info">
-                                    <span class="token-name">Info</span>
-                                    <span class="token-value">#3267B5</span>
-                                </div>
+                    <a href="tokens.html" class="home-found-tile" aria-label="Design Tokens">
+                        <div class="home-found-icon" aria-hidden="true">
+                            <div class="found-icon-swatches">
+                                <span style="background:var(--primary-400)"></span>
+                                <span style="background:var(--secondary-400)"></span>
+                                <span style="background:var(--success-400)"></span>
+                                <span style="background:var(--error-400)"></span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="token-category">
-                        <h3 class="token-category-title">Typography Scale</h3>
-                        <div class="typography-tokens">
-                            <div class="typography-token">
-                                <span class="typography-sample h1">The quick</span>
-                                <div class="token-info">
-                                    <span class="token-name">H1</span>
-                                    <span class="token-value">Arial Rounded MT Bold, 40pt</span>
-                                </div>
-                            </div>
-                            <div class="typography-token">
-                                <span class="typography-sample h3">The quick</span>
-                                <div class="token-info">
-                                    <span class="token-name">H3</span>
-                                    <span class="token-value">Arial Rounded MT Bold, 32pt</span>
-                                </div>
-                            </div>
-                            <div class="typography-token">
-                                <span class="typography-sample body">The quick brown fox</span>
-                                <div class="token-info">
-                                    <span class="token-name">Body</span>
-                                    <span class="token-value">Arial, 14pt</span>
-                                </div>
-                            </div>
-                            <div class="typography-token">
-                                <span class="typography-sample caption-1">THE QUICK BROWN FOX</span>
-                                <div class="token-info">
-                                    <span class="token-name">Caption 1</span>
-                                    <span class="token-value">Arial, 12pt, Bold, Uppercase</span>
-                                </div>
-                            </div>
+                        <div class="home-found-body">
+                            <h3>Design Tokens</h3>
+                            <p>Colors, typography, spacing, and elevation as shared variables.</p>
                         </div>
-                    </div>
+                        <svg class="home-found-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 5l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+
                 </div>
-                <div class="tokens-cta">
-                    <a href="tokens.html" class="tokens-link">View All Tokens →</a>
-                </div>
-            </div>
-        </section>
+            </section>
+
         </div><!-- /.container -->
         </main><!-- /.main-content -->
         </div><!-- /.layout-body -->
