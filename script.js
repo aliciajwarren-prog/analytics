@@ -292,8 +292,12 @@ function initializeSidebar() {
         {
             label: 'Components',
             items: [
-                { id: 'dropdown', label: 'Dropdown', href: `${basePath}components/dropdown.html` },
-                { id: 'input',    label: 'Input',    href: `${basePath}components/input.html` },
+                {
+                    id: 'input', label: 'Input Text', href: `${basePath}components/input.html`,
+                    children: [
+                        { id: 'dropdown', label: 'Dropdown', href: `${basePath}components/dropdown.html` },
+                    ],
+                },
                 {
                     id: 'cards', label: 'Cards', href: `${basePath}components/cards.html`,
                     children: [
